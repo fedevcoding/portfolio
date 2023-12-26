@@ -1,8 +1,13 @@
-import { homePfpDark, waveDark } from "@/assets";
+"use client";
+
+import { homePfpDark, homePfpLight, wakeLight, waveDark } from "@/assets";
 import Header from "./Header";
 import "@/styles/home.scss";
+import { useThemeContext } from "@/context";
 
 function Home() {
+  const { isDark } = useThemeContext();
+
   return (
     <>
       <section
@@ -22,14 +27,14 @@ function Home() {
               <br />A young full-stack developer from Italy
             </p>
 
-            <button className="bg-secondary-dark text-[28px] text-black py-4 px-12 rounded-lg">
+            <button className="dark:bg-secondary-dark bg-secondary-light text-[28px] text-black py-4 px-12 rounded-lg">
               About Me
             </button>
           </div>
-          <img src={homePfpDark.src} alt="Pfp" />
+          <img src={isDark ? homePfpDark.src : homePfpLight.src} alt="Pfp" />
         </div>
       </section>
-      <img src={waveDark.src} className="w-screen" />
+      <img src={isDark ? waveDark.src : wakeLight.src} className="w-screen" />
     </>
   );
 }

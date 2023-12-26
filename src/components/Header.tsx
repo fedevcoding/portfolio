@@ -4,7 +4,7 @@ import { discord, email, github, logo, moon, pipe, sun } from "@/assets";
 import { useThemeContext } from "@/context";
 
 function Header() {
-  const { theme, toggleTheme } = useThemeContext();
+  const { isDark, toggleTheme } = useThemeContext();
 
   return (
     <header className="flex justify-around items-center h-header" id="header">
@@ -18,7 +18,7 @@ function Header() {
         </ul>
       </nav>
       <div className="flex items-center gap-5">
-        {theme === "dark" ? (
+        {isDark ? (
           <img
             src={moon.src}
             alt="moon"

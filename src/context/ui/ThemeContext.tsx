@@ -6,6 +6,7 @@ import { useLocalStorage } from "usehooks-ts";
 
 const ThemeContext = createContext<ThemeType>({
   theme: "dark",
+  isDark: true,
   setTheme: () => {},
   toggleTheme: () => {},
 });
@@ -23,6 +24,7 @@ export function ThemeProvider({ children }: Child) {
   const [isDarkTheme, setDarkTheme] = useLocalStorage("darkTheme", true);
 
   const theme: ThemeType["theme"] = isDarkTheme ? "dark" : "light";
+  const isDark = theme === "dark";
 
   const toggleTheme = () => setDarkTheme(!isDarkTheme);
   const setTheme = (theme: ThemeType["theme"]) =>
@@ -34,7 +36,7 @@ export function ThemeProvider({ children }: Child) {
   }, [isDarkTheme, theme]);
 
   return (
-    <ThemeContext.Provider value={{ setTheme, toggleTheme, theme }}>
+    <ThemeContext.Provider value={{ setTheme, toggleTheme, theme, isDark }}>
       {children}
     </ThemeContext.Provider>
   );
