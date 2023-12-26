@@ -1,3 +1,29 @@
+"use client";
+
+import {
+  bunJs,
+  code,
+  css,
+  docker,
+  express,
+  git,
+  github2,
+  golang,
+  graphql,
+  html,
+  js,
+  mongodb,
+  nextjs,
+  nodejs,
+  postgres,
+  prisma,
+  react,
+  sass,
+  solidity,
+  tools,
+} from "@/assets";
+import Card from "./Card";
+
 function TechStack() {
   return (
     <>
@@ -13,10 +39,44 @@ function TechStack() {
             TECH STACK
           </h1>
         </div>
+
         <div className="flex justify-around items-center gap-10">
-          <div className="w-80 h-96 dark:bg-landing-dark bg-landing-light rounded-lg"></div>
-          <div className="w-80 h-96 dark:bg-landing-dark bg-landing-light rounded-lg"></div>
-          <div className="w-80 h-96 dark:bg-landing-dark bg-landing-light rounded-lg"></div>
+          <Card
+            name="Front End"
+            mainIcon={html.src}
+            icons={[
+              { icon: html.src, name: "HTML" },
+              { icon: css.src, name: "CSS" },
+              { icon: sass.src, name: "Sass" },
+              { icon: js.src, name: "JS (TS)" },
+              { icon: react.src, name: "React" },
+              { icon: nextjs.src, name: "Nextjs" },
+            ]}
+          />
+          <Card
+            name="Back End"
+            mainIcon={code.src}
+            icons={[
+              { icon: nodejs.src, name: "Node" },
+              { icon: express.src, name: "Express" },
+              { icon: prisma.src, name: "Prisma" },
+              { icon: graphql.src, name: "Graphql" },
+              { icon: postgres.src, name: "Postgres" },
+              { icon: mongodb.src, name: "MongoDB" },
+            ]}
+          />
+          <Card
+            name="Other"
+            mainIcon={tools.src}
+            icons={[
+              { icon: git.src, name: "Git" },
+              { icon: github2.src, name: "Github" },
+              { icon: docker.src, name: "Docker" },
+              { icon: bunJs.src, name: "Bunjs" },
+              { icon: solidity.src, name: "Solidity" },
+              { icon: golang.src, name: "Golang" },
+            ]}
+          />
         </div>
       </section>
       <div className="w-screen h-[1px] dark:bg-line-dark bg-line-light" />

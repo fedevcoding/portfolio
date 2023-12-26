@@ -52,8 +52,13 @@ function Home() {
               About Me
             </button>
           </div>
+
           <div className="relative">
-            <img src={isDark ? homePfpDark.src : homePfpLight.src} alt="Pfp" />
+            <img
+              src={isDark ? homePfpDark.src : homePfpLight.src}
+              alt="Pfp"
+              className="w-[400px] h-[440px]"
+            />
             <div className="leftEye eyes"></div>
             <div className="rightEye eyes"></div>
           </div>
