@@ -1,6 +1,6 @@
 "use client";
 
-import { meDark, wakeLight, waveDark } from "@/assets";
+import { meDark, meLight, wakeLight, waveDark } from "@/assets";
 import { useThemeContext } from "@/context";
 
 function About() {
@@ -15,7 +15,7 @@ function About() {
         <img src={isDark ? waveDark.src : wakeLight.src} className="w-screen" />
 
         <div className="flex justify-center items-center gap-44">
-          <img src={meDark.src} alt="Me" />
+          <img src={isDark ? meDark.src : meLight.src} alt="Me" />
           <div className="flex flex-col max-w-[25vw]">
             <p className="dark:text-secondary-dark text-secondary-light">
               A little bit
@@ -38,7 +38,7 @@ function About() {
           </div>
         </div>
       </section>
-      <hr className="w-screen h-[1px] bg-line-dark" />
+      <div className="w-screen h-[1px] dark:bg-line-dark bg-line-light" />
     </>
   );
 }

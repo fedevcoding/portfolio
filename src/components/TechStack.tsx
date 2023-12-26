@@ -6,18 +6,20 @@ function TechStack() {
         id="tech-stack"
       >
         <div className="text-center">
-          <p className="dark:text-secondary-dark text-secondary">Some of my</p>
+          <p className="dark:text-secondary-dark text-secondary-light">
+            Some of my
+          </p>
           <h1 className="text-[48px] font-[800] leading-normal tracking-[4.8px]">
             TECH STACK
           </h1>
         </div>
         <div className="flex justify-around items-center gap-10">
-          <div className="w-80 h-96 bg-landing-dark rounded-lg"></div>
-          <div className="w-80 h-96 bg-landing-dark rounded-lg"></div>
-          <div className="w-80 h-96 bg-landing-dark rounded-lg"></div>
+          <div className="w-80 h-96 dark:bg-landing-dark bg-landing-light rounded-lg"></div>
+          <div className="w-80 h-96 dark:bg-landing-dark bg-landing-light rounded-lg"></div>
+          <div className="w-80 h-96 dark:bg-landing-dark bg-landing-light rounded-lg"></div>
         </div>
       </section>
-      <hr className="w-screen h-[1px] bg-line-dark" />
+      <div className="w-screen h-[1px] dark:bg-line-dark bg-line-light" />
     </>
   );
 }
