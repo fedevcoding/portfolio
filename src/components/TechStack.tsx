@@ -40,7 +40,7 @@ function TechStack() {
           </h1>
         </div>
 
-        <div className="flex justify-around items-center gap-10">
+        <div className="flex justify-around items-center gap-24">
           <Card
             name="Front End"
             mainIcon={html.src}

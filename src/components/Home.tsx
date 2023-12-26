@@ -1,6 +1,6 @@
 "use client";
 
-import { homePfpDark, homePfpLight, wakeLight, waveDark } from "@/assets";
+import { homePfpDark, homePfpLight } from "@/assets";
 import Header from "./Header";
 import "@/styles/Home.scss";
 import { useThemeContext } from "@/context";

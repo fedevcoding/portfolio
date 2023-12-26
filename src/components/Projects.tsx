@@ -1,7 +1,7 @@
 function Projects() {
   return (
     <section
-      className="h-screen dark:bg-primary-dark bg-primary-light flex flex-col justify-center items-center gap-24"
+      className="min-h-screen dark:bg-primary-dark bg-primary-light flex flex-col justify-center items-center gap-24"
       id="projects"
     >
       <div className="text-center">

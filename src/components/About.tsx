@@ -1,6 +1,6 @@
 "use client";
 
-import { meDark, meLight, wakeLight, waveDark } from "@/assets";
+import { meDark, meLight, waveLight, waveDark } from "@/assets";
 import { useThemeContext } from "@/context";
 
 function About() {
@@ -12,7 +12,11 @@ function About() {
         className="h-screen dark:bg-primary-dark bg-primary-light"
         id="about"
       >
-        <img src={isDark ? waveDark.src : wakeLight.src} className="w-screen" />
+        <img
+          src={isDark ? waveDark.src : waveLight.src}
+          className="w-screen"
+          alt="wave"
+        />
 
         <div className="flex justify-center items-center gap-44">
           <img src={isDark ? meDark.src : meLight.src} alt="Me" />
