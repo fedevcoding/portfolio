@@ -2,11 +2,32 @@
 
 import { homePfpDark, homePfpLight, wakeLight, waveDark } from "@/assets";
 import Header from "./Header";
-import "@/styles/home.scss";
+import "@/styles/Home.scss";
 import { useThemeContext } from "@/context";
+import { useEffect } from "react";
 
 function Home() {
   const { isDark } = useThemeContext();
+
+  useEffect(() => {
+    document.addEventListener("mousemove", animateEyes);
+
+    function animateEyes(e: MouseEvent) {
+      const eyes = document.querySelectorAll(".eyes");
+      eyes.forEach((eye) => {
+        let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+        let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+        let radian = Math.atan2(e.pageX - x, e.pageY - y);
+        let rotate = radian * (180 / Math.PI) * -1 + 270;
+        if (eye instanceof HTMLElement) {
+          eye.style.transform = `rotate(${rotate}deg)`;
+        }
+      });
+    }
+    return () => {
+      document.removeEventListener("mousemove", animateEyes);
+    };
+  }, []);
 
   return (
     <>
@@ -31,10 +52,13 @@ function Home() {
               About Me
             </button>
           </div>
-          <img src={isDark ? homePfpDark.src : homePfpLight.src} alt="Pfp" />
+          <div className="relative">
+            <img src={isDark ? homePfpDark.src : homePfpLight.src} alt="Pfp" />
+            <div className="leftEye eyes"></div>
+            <div className="rightEye eyes"></div>
+          </div>
         </div>
       </section>
-      <img src={isDark ? waveDark.src : wakeLight.src} className="w-screen" />
     </>
   );
 }
