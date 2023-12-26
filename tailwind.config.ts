@@ -9,8 +9,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      height: {
+        header: '90px',
+        home: 'calc(100vh - 90px)',
+      },
       backgroundColor: {
-        "landing-dark": "#1E1E1E",
+        "landing-dark": "#07111A",
         "landing-light": "#C1C1C1",
         "primary-dark": "#08141F",
         "primary-light": "#D3D3D3",
