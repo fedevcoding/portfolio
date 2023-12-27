@@ -1,8 +1,7 @@
 "use client";
 
 import { Child, ThemeType } from "@/types";
-import { createContext, useContext, useEffect } from "react";
-import { useLocalStorage } from "usehooks-ts";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext<ThemeType>({
   theme: "dark",
@@ -21,22 +20,61 @@ export const useThemeContext = () => {
 };
 
 export function ThemeProvider({ children }: Child) {
-  const [isDarkTheme, setDarkTheme] = useLocalStorage("darkTheme", true);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  useEffect(() => initialThemeHandler());
 
-  const theme: ThemeType["theme"] = isDarkTheme ? "dark" : "light";
-  const isDark = theme === "dark";
+  function isLocalStorageEmpty(): boolean {
+    return !localStorage.getItem("isDarkTheme");
+  }
 
-  const toggleTheme = () => setDarkTheme(!isDarkTheme);
-  const setTheme = (theme: ThemeType["theme"]) =>
-    setDarkTheme(theme === "dark");
+  function initialThemeHandler(): void {
+    console.log("initialThemeHandler");
+    if (isLocalStorageEmpty()) {
+      localStorage.setItem("isDarkTheme", `true`);
+      toggleClasses(true);
+      setIsDarkTheme(true);
+    } else {
+      const isDarkTheme: boolean = JSON.parse(
+        localStorage.getItem("isDarkTheme")!
+      );
+      toggleClasses(isDarkTheme);
+      setIsDarkTheme(() => {
+        return isDarkTheme;
+      });
+    }
+  }
 
-  useEffect(() => {
+  function toggleClasses(isDarkTheme: boolean): void {
     document.body.classList.remove("dark", "light");
-    document.body.classList.add(theme);
-  }, [isDarkTheme, theme]);
+    if (isDarkTheme) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.add("light");
+    }
+  }
+
+  function toggleTheme(): void {
+    const isDarkTheme: boolean = JSON.parse(
+      localStorage.getItem("isDarkTheme")!
+    );
+    setIsDarkTheme(!isDarkTheme);
+    toggleClasses(!isDarkTheme);
+    setValueToLocalStorage();
+  }
+
+  function setValueToLocalStorage(): void {
+    localStorage.setItem("isDarkTheme", `${!isDarkTheme}`);
+  }
+
+  const theme = isDarkTheme ? "dark" : "light";
+  const setTheme = (theme: string) => {
+    theme === "dark" ? setIsDarkTheme(true) : setIsDarkTheme(false);
+  };
 
   return (
-    <ThemeContext.Provider value={{ setTheme, toggleTheme, theme, isDark }}>
+    <ThemeContext.Provider
+      value={{ setTheme, toggleTheme, theme, isDark: isDarkTheme }}
+    >
       {children}
     </ThemeContext.Provider>
   );
