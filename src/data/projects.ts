@@ -1,0 +1,66 @@
+import { food, url, bot, keyboard, chat, garage, foodStudio, urlShortener, chatCli } from "@/assets";
+
+import { Projects } from "@/types";
+
+export const PROJECTS: Projects = [
+    {
+        icon: food.src,
+        label: "Food studio",
+        name: "Florence Food Studio",
+        description: "A website for florence food studio restaurant",
+        technologies: ["NextJS", "JavaScript", "Tailwind CSS", "Netlify", "Github actions"],
+        preview: foodStudio.src,
+        repo: null,
+        url: "https://florencefoodstudio.com",
+    },
+    {
+        icon: url.src,
+        label: "Url shortener",
+        name: "URL Shortener",
+        description: "A simple and free url shortener with visit analytics",
+        technologies: ["ReactJS", "JavaScript", "Sass", "Netlify", "Railway", "Github actions"],
+        preview: urlShortener.src,
+        repo: "https://github.com/fedevcoding/url-shortener",
+        url: "https://testshortener.netlify.app",
+      },
+      {
+        icon: chat.src,
+        label: "Chat CLI",
+        name: "Chat app in the terminal",
+        description: "Chat CLI (command line interface) is a chat app that runs in the terminal, you can chat with your friends in global, public and private chats.",
+        technologies: ["Nodejs", "JavaScript", "Socket.io", "DPKG", "Inno Setup"],
+        preview: chatCli.src,
+        repo: "https://github.com/fedevcoding/chat-cli",
+        url: "https://download-chatcli.fedev.me",
+      },
+      {
+        icon: bot.src,
+        label: "CVV Bot",
+                name: "Florence Food Studio",
+        description: "A website for florence food studio restaurant",
+        technologies: ["NextJS", "JavaScript", "Tailwind CSS", "Netlify", "github actions"],
+        preview: foodStudio.src,
+        repo: null,
+        url: "https://florencefoodstudio.com",
+      },
+      {
+        icon: keyboard.src,
+        label: "CLI Racer",
+                name: "Florence Food Studio",
+        description: "A website for florence food studio restaurant",
+        technologies: ["NextJS", "JavaScript", "Tailwind CSS", "Netlify", "github actions"],
+        preview: foodStudio.src,
+        repo: null,
+        url: "https://florencefoodstudio.com",
+      },
+      {
+        icon: garage.src,
+        label: "Garage opener",
+                name: "Florence Food Studio",
+        description: "A website for florence food studio restaurant",
+        technologies: ["NextJS", "JavaScript", "Tailwind CSS", "Netlify", "github actions"],
+        preview: foodStudio.src,
+        repo: null,
+        url: "https://florencefoodstudio.com",
+      },
+]
