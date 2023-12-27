@@ -28,10 +28,10 @@ function TechStack() {
   return (
     <>
       <section
-        className="h-screen dark:bg-primary-dark bg-primary-light flex flex-col justify-center items-center gap-24"
+        className="h-screen dark:bg-primary-dark bg-primary-light pb-20"
         id="tech-stack"
       >
-        <div className="text-center">
+        <div className="text-center py-24">
           <p className="dark:text-secondary-dark text-secondary-light">
             Some of my
           </p>
@@ -40,7 +40,7 @@ function TechStack() {
           </h1>
         </div>
 
-        <div className="flex justify-around items-center gap-24">
+        <div className="flex justify-around items-center gap-24 w-[75vw] mx-auto">
           <Card
             name="Front End"
             mainIcon={html.src}

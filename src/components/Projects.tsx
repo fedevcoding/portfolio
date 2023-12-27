@@ -1,10 +1,10 @@
 function Projects() {
   return (
     <section
-      className="min-h-screen dark:bg-primary-dark bg-primary-light flex flex-col justify-center items-center gap-24"
+      className="min-h-screen dark:bg-primary-dark bg-primary-light pb-20"
       id="projects"
     >
-      <div className="text-center">
+      <div className="text-center py-24">
         <p className="dark:text-secondary-dark text-secondary-light">
           Some of my
         </p>
@@ -12,6 +12,8 @@ function Projects() {
           PROJECTS
         </h1>
       </div>
+
+      <div className="h-[70vh] w-[70vw] bg-landing-dark rounded-lg mx-auto"></div>
     </section>
   );
 }

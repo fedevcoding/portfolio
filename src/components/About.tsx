@@ -20,8 +20,8 @@ function About() {
         />
         <div className="flex justify-center items-center gap-44">
           <motion.div
-            initial={{ x: -50, opacity: 0.5, scale: 0.6 }}
-            whileInView={{ x: 0, opacity: 1, scale: 1 }}
+            initial={{ x: -50, opacity: 0.5 }}
+            whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
