@@ -5,6 +5,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { PROJECTS } from "@/data/projects";
 import Link from "next/link";
+import { github3, url } from "@/assets";
 
 function Projects() {
   const [selectedTab, setSelectedTab] = useState(PROJECTS[0]);
@@ -55,17 +56,26 @@ function Projects() {
                 {selectedTab.label}
               </h2>
               <div className="flex items-center justify-evenly">
-                <Link
-                  href={selectedTab.url || ""}
-                  target="_blank"
-                  className="w-[40%]"
-                >
-                  <img
+                {selectedTab.type === "image" ? (
+                  <Link
+                    href={selectedTab.url || ""}
+                    target="_blank"
+                    className="w-[40%]"
+                  >
+                    <img
+                      src={selectedTab.preview}
+                      alt={selectedTab.label}
+                      className="w-full rounded-lg"
+                    />
+                  </Link>
+                ) : (
+                  <video
                     src={selectedTab.preview}
-                    alt={selectedTab.label}
-                    className="w-full rounded-lg"
+                    className="w-[40%] rounded-lg"
+                    controls
+                    muted
                   />
-                </Link>
+                )}
                 <div className="mt-10 text-lg w-[40%]">
                   <p>
                     <span className="text-secondary-dark">Name:</span>&nbsp;
@@ -81,6 +91,19 @@ function Projects() {
                     &nbsp;
                     {selectedTab.technologies.join(", ")}
                   </p>
+                  <div className="mt-6 flex items-center gap-8">
+                    {selectedTab.repo ? (
+                      <Link href={selectedTab.repo} target="_blank">
+                        <img src={github3.src} alt="github" />
+                      </Link>
+                    ) : null}
+
+                    {selectedTab.url ? (
+                      <Link href={selectedTab.url} target="_blank">
+                        <img src={url.src} alt="link" />
+                      </Link>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             </motion.div>

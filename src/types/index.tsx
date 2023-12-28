@@ -13,6 +13,8 @@ export type Projects = {
   label: string;
   icon: string;
 
+  type: "image" | "video";
+
   name: string;
   description: string;
   technologies: string[];
