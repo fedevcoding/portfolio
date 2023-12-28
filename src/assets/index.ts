@@ -11,7 +11,6 @@ export { default as discord } from "./icons/discord.svg";
 export { default as email } from "./icons/email.svg";
 export { default as github } from "./icons/github.svg";
 export { default as github2 } from "./icons/github2.svg";
-export { default as github3 } from "./icons/github3.svg";
 export { default as pipe } from "./icons/pipe.svg";
 export { default as html } from "./icons/html.svg";
 export { default as css } from "./icons/css.svg";

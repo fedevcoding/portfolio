@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Footer from "@/components/Footer";
 import Home from "@/components/Home";
 import Projects from "@/components/Projects";
 import TechStack from "@/components/TechStack";
@@ -10,6 +11,7 @@ export default function Page() {
       <About />
       <TechStack />
       <Projects />
+      <Footer />
     </>
   );
 }
