@@ -11,38 +11,49 @@ function Footer() {
       <Section theme="secondary">
         <Row className="py-10" direction={"col"} align={"center"} gap={"sm"}>
           <Row align={"center"} gap={"md"}>
-            <Img
-              src={github.src}
-              alt="Github"
-              size={"sm-2"}
-              fit={"contain"}
-              aspect="square"
-              invertDark
-            />
-            <Img
-              src={discord.src}
-              alt="Discord"
-              size={"sm-2"}
-              fit={"contain"}
-              aspect="square"
-              invertDark
-            />
-            <Img
-              src={email.src}
-              alt="Email"
-              size={"sm-2"}
-              fit={"contain"}
-              aspect="square"
-              invertDark
-            />
-            <Img
-              src={telegram.src}
-              alt="Telegram"
-              size={"sm-2"}
-              fit={"contain"}
-              aspect="square"
-              invertLight
-            />
+            <Link href={"https://github.com/fedevcoding"} target="_blank">
+              <Img
+                src={github.src}
+                alt="Github"
+                size={"sm-2"}
+                fit={"contain"}
+                aspect="square"
+                invertDark
+              />
+            </Link>
+            <Link
+              href={"https://discordapp.com/users/646076973025722388"}
+              target="_blank"
+            >
+              <Img
+                src={discord.src}
+                alt="Discord"
+                size={"sm-2"}
+                fit={"contain"}
+                aspect="square"
+                invertDark
+              />
+            </Link>
+            <Link href={"mailto:fedevcoding@gmail.com"} target="_blank">
+              <Img
+                src={email.src}
+                alt="Email"
+                size={"sm-2"}
+                fit={"contain"}
+                aspect="square"
+                invertDark
+              />
+            </Link>
+            <Link href={"https://t.me/cavallinifederico"} target="_blank">
+              <Img
+                src={telegram.src}
+                alt="Telegram"
+                size={"sm-2"}
+                fit={"contain"}
+                aspect="square"
+                invertLight
+              />
+            </Link>
           </Row>
           <Row align={"center"} gap={"sm"}>
             <P>© {new Date().getFullYear()} fedevcoding</P>

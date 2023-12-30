@@ -29,7 +29,12 @@ function Card({ name, mainIcon, icons }: Props) {
             aspect={"square"}
             fit={"contain"}
           />
-          <P boldness={"semi-bold"} align={"center"} theme={"opposite"}>
+          <P
+            boldness={"semi-bold"}
+            align={"center"}
+            theme={"opposite"}
+            className="text-black"
+          >
             {name}
           </P>
         </div>
