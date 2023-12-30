@@ -45,6 +45,9 @@ export const rowVariants = cva("flex", {
       lg: "gap-[80px]",
       xl: "gap-[120px]",
       "2xl": "gap-[160px]",
+      "3xl": "gap-[190px]",
+      "4xl": "gap-[230px]",
+      "5xl": "gap-[250px]",
     },
     minWidth: {
       auto: "min-w-auto",

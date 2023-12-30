@@ -15,18 +15,6 @@ function Home() {
   useEffect(() => {
     document.addEventListener("mousemove", animateEyes);
 
-    function animateEyes(e: MouseEvent) {
-      const eyes = document.querySelectorAll(".eyes");
-      eyes.forEach((eye) => {
-        let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
-        let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
-        let radian = Math.atan2(e.pageX - x, e.pageY - y);
-        let rotate = radian * (180 / Math.PI) * -1 + 270;
-        if (eye instanceof HTMLElement) {
-          eye.style.transform = `rotate(${rotate}deg)`;
-        }
-      });
-    }
     return () => {
       document.removeEventListener("mousemove", animateEyes);
     };
@@ -78,3 +66,16 @@ function Home() {
 }
 
 export default Home;
+
+function animateEyes(e: MouseEvent) {
+  const eyes = document.querySelectorAll(".eyes");
+  eyes.forEach((eye) => {
+    let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+    let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+    let radian = Math.atan2(e.pageX - x, e.pageY - y);
+    let rotate = radian * (180 / Math.PI) * -1 + 270;
+    if (eye instanceof HTMLElement) {
+      eye.style.transform = `rotate(${rotate}deg)`;
+    }
+  });
+}
