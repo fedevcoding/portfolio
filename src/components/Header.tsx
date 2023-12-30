@@ -4,6 +4,7 @@ import { discord, email, github, logo, moon, pipe, sun } from "@/assets";
 import { useThemeContext } from "@/context";
 import { Row } from "./ui/Row";
 import Link from "next/link";
+import { Img } from "./ui/Img";
 
 function Header() {
   const { isDark, toggleTheme } = useThemeContext();
@@ -12,7 +13,7 @@ function Header() {
     <header className="h-header">
       <Row align={"center"} justify={"center"} gap={"5xl"}>
         <Link href="/">
-          <img src={logo.src} alt="logo" />
+          <Img alt="logo" src={logo.src} size={"lg"} />
         </Link>
         <nav>
           <ul>
@@ -33,29 +34,57 @@ function Header() {
           </ul>
         </nav>
         <Row align={"center"} gap={"sm"}>
-          {isDark ? (
-            <img
-              src={moon.src}
-              alt="moon"
-              className="w-8 h-8"
-              onClick={toggleTheme}
-            />
-          ) : (
-            <img
-              src={sun.src}
-              alt="sun"
-              className="w-8 h-8"
-              onClick={toggleTheme}
-            />
-          )}
-          <img src={pipe.src} alt="pipe" className="w-8 h-8 dark:invert" />
-          <img src={github.src} alt="github" className="w-8 h-8 dark:invert" />
-          <img
-            src={discord.src}
-            alt="discord"
-            className="w-8 h-8 dark:invert"
+          <Img
+            src={isDark ? moon.src : sun.src}
+            alt="theme"
+            onClick={toggleTheme}
+            aspect={"square"}
+            fit="contain"
+            size={"sm-2"}
+            className="cursor-pointer"
           />
-          <img src={email.src} alt="email" className="w-8 h-8 dark:invert" />
+          <Img
+            src={pipe.src}
+            alt="pipe"
+            className="dark:invert"
+            aspect={"square"}
+            fit="contain"
+            size={"sm-2"}
+          />
+          <Link href={"https://github.com/fedevcoding"} target="_blank">
+            <Img
+              src={github.src}
+              alt="github"
+              className="dark:invert"
+              aspect={"square"}
+              fit="contain"
+              size={"sm-2"}
+            />
+          </Link>
+          <Link
+            href={"https://discordapp.com/users/646076973025722388"}
+            target="_blank"
+          >
+            <Img
+              src={discord.src}
+              alt="discord"
+              className="dark:invert"
+              aspect={"square"}
+              fit="contain"
+              size={"sm-2"}
+            />
+          </Link>
+
+          <Link href={"mailto:fedevcoding@gmail.com"} target="_blank">
+            <Img
+              src={email.src}
+              alt="email"
+              className="dark:invert"
+              aspect={"square"}
+              fit="contain"
+              size={"sm-2"}
+            />
+          </Link>
         </Row>
       </Row>
     </header>
