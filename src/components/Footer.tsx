@@ -2,7 +2,7 @@ import { discord, email, github, pipe, telegram } from "@/assets";
 
 function Footer() {
   return (
-    <footer className="bg-primary-dark flex flex-col items-center gap-4 py-6">
+    <footer className="bg-primary-dark flex flex-col items-center gap-6 py-10">
       <div className="flex items-center gap-12">
         <img src={github.src} alt="Github" className="invert" />
         <img src={discord.src} alt="Discord" className="invert" />

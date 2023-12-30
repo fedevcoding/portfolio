@@ -5,6 +5,9 @@ import Header from "./Header";
 import "@/styles/Home.scss";
 import { useThemeContext } from "@/context";
 import { useEffect } from "react";
+import { P } from "./ui/P";
+import { Heading } from "./ui/Heading";
+import { Row } from "./ui/Row";
 
 function Home() {
   const { isDark } = useThemeContext();
@@ -36,22 +39,28 @@ function Home() {
         id="home"
       >
         <Header />
-        <div className="flex w-screen justify-center items-center h-home gap-44">
-          <div className="flex flex-col items-start h-full justify-center gap-16">
-            <h1 className="text-[48px] font-[800] leading-normal tracking-[4.8px]">
+        <Row justify={"center"} align={"center"} className="h-home" gap={"2xl"}>
+          <Row
+            direction={"col"}
+            fullHeight
+            justify={"center"}
+            gap={"md"}
+            align={"start"}
+          >
+            <Heading letterGap={"2xl"} variant={"h1"}>
               FEDERICO
               <br />
               CAVALLINI
-            </h1>
-            <p>
+            </Heading>
+            <P size={"lg"}>
               Hi, I&apos;m Fedev
               <br />A young full-stack developer from Italy
-            </p>
+            </P>
 
-            <button className="dark:bg-secondary-dark bg-secondary-light text-[28px] text-black py-4 px-12 rounded-lg">
+            <button className="dark:bg-secondary-dark bg-secondary-light text-2xl text-black py-4 px-12 rounded-lg">
               About Me
             </button>
-          </div>
+          </Row>
 
           <div className="relative">
             <img
@@ -62,7 +71,7 @@ function Home() {
             <div className="leftEye eyes"></div>
             <div className="rightEye eyes"></div>
           </div>
-        </div>
+        </Row>
       </section>
     </>
   );
