@@ -1,28 +1,12 @@
 "use client";
 
-import {
-  bunJs,
-  code,
-  css,
-  docker,
-  express,
-  git,
-  github2,
-  golang,
-  graphql,
-  html,
-  js,
-  mongodb,
-  nextjs,
-  nodejs,
-  postgres,
-  prisma,
-  react,
-  sass,
-  solidity,
-  tools,
-} from "@/assets";
+import { code, html, tools } from "@/assets";
 import Card from "./Card";
+import { techStack } from "@/data/techStack";
+import { P } from "./ui/P";
+import { Heading } from "./ui/Heading";
+import { Row } from "./ui/Row";
+import Line from "./ui/Line";
 
 function TechStack() {
   return (
@@ -31,55 +15,26 @@ function TechStack() {
         className="h-screen dark:bg-primary-dark bg-primary-light pb-20"
         id="tech-stack"
       >
-        <div className="text-center py-24">
-          <p className="dark:text-secondary-dark text-secondary-light">
+        <div className="py-24">
+          <P theme={"secondary"} align={"center"}>
             Some of my
-          </p>
-          <h1 className="text-[48px] font-[800] leading-normal tracking-[4.8px]">
+          </P>
+          <Heading letterGap={"xl"} align={"center"}>
             TECH STACK
-          </h1>
+          </Heading>
         </div>
 
-        <div className="flex justify-around items-center gap-24 w-[75vw] mx-auto">
+        <Row justify={"center"} align={"center"} gap={"3xl"}>
           <Card
             name="Front End"
             mainIcon={html.src}
-            icons={[
-              { icon: html.src, name: "HTML" },
-              { icon: css.src, name: "CSS" },
-              { icon: sass.src, name: "Sass" },
-              { icon: js.src, name: "JS (TS)" },
-              { icon: react.src, name: "React" },
-              { icon: nextjs.src, name: "Nextjs" },
-            ]}
+            icons={techStack.frontEnd}
           />
-          <Card
-            name="Back End"
-            mainIcon={code.src}
-            icons={[
-              { icon: nodejs.src, name: "Node" },
-              { icon: express.src, name: "Express" },
-              { icon: prisma.src, name: "Prisma" },
-              { icon: graphql.src, name: "Graphql" },
-              { icon: postgres.src, name: "Postgres" },
-              { icon: mongodb.src, name: "MongoDB" },
-            ]}
-          />
-          <Card
-            name="Other"
-            mainIcon={tools.src}
-            icons={[
-              { icon: git.src, name: "Git" },
-              { icon: github2.src, name: "Github" },
-              { icon: docker.src, name: "Docker" },
-              { icon: bunJs.src, name: "Bunjs" },
-              { icon: solidity.src, name: "Solidity" },
-              { icon: golang.src, name: "Golang" },
-            ]}
-          />
-        </div>
+          <Card name="Back End" mainIcon={code.src} icons={techStack.backEnd} />
+          <Card name="Other" mainIcon={tools.src} icons={techStack.other} />
+        </Row>
       </section>
-      <div className="w-screen h-[1px] dark:bg-line-dark bg-line-light" />
+      <Line />
     </>
   );
 }

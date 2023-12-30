@@ -1,0 +1,47 @@
+import {
+  bunJs,
+  css,
+  docker,
+  express,
+  git,
+  github2,
+  golang,
+  graphql,
+  html,
+  js,
+  mongodb,
+  nextjs,
+  nodejs,
+  postgres,
+  prisma,
+  react,
+  sass,
+  solidity,
+} from "@/assets";
+
+export const techStack = {
+  frontEnd: [
+    { icon: html.src, name: "HTML" },
+    { icon: css.src, name: "CSS" },
+    { icon: sass.src, name: "Sass" },
+    { icon: js.src, name: "JS (TS)" },
+    { icon: react.src, name: "React" },
+    { icon: nextjs.src, name: "Nextjs" },
+  ],
+  backEnd: [
+    { icon: nodejs.src, name: "Node" },
+    { icon: express.src, name: "Express" },
+    { icon: prisma.src, name: "Prisma" },
+    { icon: graphql.src, name: "Graphql" },
+    { icon: postgres.src, name: "Postgres" },
+    { icon: mongodb.src, name: "MongoDB" },
+  ],
+  other: [
+    { icon: git.src, name: "Git" },
+    { icon: github2.src, name: "Github" },
+    { icon: docker.src, name: "Docker" },
+    { icon: bunJs.src, name: "Bunjs" },
+    { icon: solidity.src, name: "Solidity" },
+    { icon: golang.src, name: "Golang" },
+  ],
+};

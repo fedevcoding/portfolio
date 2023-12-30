@@ -5,7 +5,7 @@ import { cn } from "@/lib";
 export const headingVariants = cva("font-bold", {
   variants: {
     variant: {
-      h1: "text-5xl",
+      h1: "text-5xl leading-[1.2]",
       h2: "text-3xl",
       h3: "text-2xl",
       h4: "text-xl",

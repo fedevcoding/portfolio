@@ -6,12 +6,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { PROJECTS } from "@/data/projects";
 import Link from "next/link";
 import { github, url } from "@/assets";
+import Line from "./ui/Line";
 
 function Projects() {
   const [selectedTab, setSelectedTab] = useState(PROJECTS[0]);
 
   return (
-    <>
+    <div>
       <section
         className="min-h-screen dark:bg-primary-dark bg-primary-light pb-20"
         id="projects"
@@ -116,8 +117,8 @@ function Projects() {
           </main>
         </div>
       </section>
-      <div className="w-screen h-[1px] dark:bg-line-dark bg-line-light" />
-    </>
+      <Line />
+    </div>
   );
 }
 

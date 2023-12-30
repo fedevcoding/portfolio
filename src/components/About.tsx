@@ -3,6 +3,10 @@
 import { meDark, meLight, waveLight, waveDark } from "@/assets";
 import { useThemeContext } from "@/context";
 import { motion } from "framer-motion";
+import { Row } from "./ui/Row";
+import { P } from "./ui/P";
+import { Heading } from "./ui/Heading";
+import Line from "./ui/Line";
 
 function About() {
   const { isDark } = useThemeContext();
@@ -18,7 +22,7 @@ function About() {
           className="w-screen"
           alt="wave"
         />
-        <div className="flex justify-center items-center gap-44">
+        <Row justify={"center"} align={"center"} gap={"3xl"}>
           <motion.div
             initial={{ x: -50, opacity: 0.5 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -33,30 +37,24 @@ function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="flex flex-col max-w-[25vw]">
-              <p className="dark:text-secondary-dark text-secondary-light">
-                A little bit
-              </p>
-              <h1 className="text-[48px] font-[800] leading-normal tracking-[4.8px]">
-                ABOUT ME
-              </h1>
-              <p className="dark:text-secondary-dark text-secondary-light">
-                Front-end/back-end developer
-              </p>
+            <Row direction="col" className="max-w-[25vw]">
+              <P theme={"secondary"}>A little bit</P>
+              <Heading letterGap={"xl"}>ABOUT ME</Heading>
+              <P theme={"secondary"}>Front-end/back-end developer</P>
               <br />
-              <p className="text-[20px]">
+              <P size={"xl"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
                 nihil possimus voluptatibus vel. At, id magni, et non asperiores
                 laborum assumenda aliquid blanditiis iusto consectetur, soluta
                 quo nobis totam magnam.
                 <br />
                 Lorem ipsum dolor sit amet consectetur
-              </p>
-            </div>
+              </P>
+            </Row>
           </motion.div>
-        </div>
+        </Row>
       </section>
-      <div className="w-screen h-[1px] dark:bg-line-dark bg-line-light" />
+      <Line />
     </>
   );
 }

@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { P } from "./ui/P";
 import { Heading } from "./ui/Heading";
 import { Row } from "./ui/Row";
+import Link from "next/link";
 
 function Home() {
   const { isDark } = useThemeContext();
@@ -45,9 +46,11 @@ function Home() {
               <br />A young full-stack developer from Italy
             </P>
 
-            <button className="dark:bg-secondary-dark bg-secondary-light text-2xl text-black py-4 px-12 rounded-lg">
-              About Me
-            </button>
+            <Link href={"#about"}>
+              <button className="dark:bg-secondary-dark bg-secondary-light text-2xl text-black py-4 px-12 rounded-lg">
+                About Me
+              </button>
+            </Link>
           </Row>
 
           <div className="relative">

@@ -1,29 +1,29 @@
 #home {
-    .leftEye, .rightEye{
-        position: absolute;
-        border-radius: 50%;
-        height: 5%;
-        width: 5%;
-        &::after {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translate(0, -50%);
-            width: 30%;
-            height: 30%;
-            background: #000;
-            border-radius: 50%;
-            content: " ";
-        }
+  .leftEye,
+  .rightEye {
+    position: absolute;
+    border-radius: 50%;
+    height: 5%;
+    width: 5%;
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 30%;
+      height: 30%;
+      background: #000;
+      border-radius: 50%;
+      content: " ";
     }
+  }
 
-    .leftEye {
-        left: 36%;
-        top: 37%;
-    }
-    .rightEye {
-        right: 40%;
-        top: 37%;
-    }
-
+  .leftEye {
+    left: 37%;
+    top: 38%;
+  }
+  .rightEye {
+    right: 40%;
+    top: 38%;
+  }
 }
