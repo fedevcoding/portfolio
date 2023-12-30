@@ -28,7 +28,11 @@ function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <img src={isDark ? meDark.src : meLight.src} alt="Me" />
+            <Img
+              size={"3xl"}
+              src={isDark ? meDark.src : meLight.src}
+              alt="Me"
+            />
           </motion.div>
           <motion.div
             initial={{ x: 50, opacity: 0.5 }}

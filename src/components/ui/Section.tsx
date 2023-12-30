@@ -11,9 +11,11 @@ function Section({ children, theme, ...props }: Props) {
     <section
       {...props}
       className={cn(
-        `dark:bg-${theme === "primary" ? "landing" : "primary"}-dark bg-${
-          theme === "primary" ? "landing" : "primary"
-        }-light`,
+        `${
+          theme === "primary"
+            ? "dark:bg-landing-dark bg-landing-light"
+            : "dark:bg-primary-dark bg-primary-light"
+        }`,
         props.className
       )}
     >

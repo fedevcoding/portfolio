@@ -10,6 +10,7 @@ import { Heading } from "./ui/Heading";
 import { Row } from "./ui/Row";
 import Link from "next/link";
 import Section from "./ui/Section";
+import { Img } from "./ui/Img";
 
 function Home() {
   const { isDark } = useThemeContext();
@@ -52,10 +53,10 @@ function Home() {
           </Row>
 
           <div className="relative">
-            <img
+            <Img
               src={isDark ? homePfpDark.src : homePfpLight.src}
               alt="Pfp"
-              className="w-[400px] h-[440px]"
+              size={"3xl"}
             />
             <div className="leftEye eyes"></div>
             <div className="rightEye eyes"></div>
