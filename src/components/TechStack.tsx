@@ -7,14 +7,12 @@ import { P } from "./ui/P";
 import { Heading } from "./ui/Heading";
 import { Row } from "./ui/Row";
 import Line from "./ui/Line";
+import Section from "./ui/Section";
 
 function TechStack() {
   return (
     <>
-      <section
-        className="h-screen dark:bg-primary-dark bg-primary-light pb-20"
-        id="tech-stack"
-      >
+      <Section className="h-screen pb-20" id="tech-stack" theme="secondary">
         <div className="py-24">
           <P theme={"secondary"} align={"center"}>
             Some of my
@@ -33,7 +31,7 @@ function TechStack() {
           <Card name="Back End" mainIcon={code.src} icons={techStack.backEnd} />
           <Card name="Other" mainIcon={tools.src} icons={techStack.other} />
         </Row>
-      </section>
+      </Section>
       <Line />
     </>
   );

@@ -7,16 +7,14 @@ import { Row } from "./ui/Row";
 import { P } from "./ui/P";
 import { Heading } from "./ui/Heading";
 import Line from "./ui/Line";
+import Section from "./ui/Section";
 
 function About() {
   const { isDark } = useThemeContext();
 
   return (
     <>
-      <section
-        className="h-screen dark:bg-primary-dark bg-primary-light"
-        id="about"
-      >
+      <Section className="h-screen" id="about" theme="secondary">
         <img
           src={isDark ? waveDark.src : waveLight.src}
           className="w-screen"
@@ -53,7 +51,7 @@ function About() {
             </Row>
           </motion.div>
         </Row>
-      </section>
+      </Section>
       <Line />
     </>
   );

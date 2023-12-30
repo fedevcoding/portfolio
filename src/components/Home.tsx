@@ -9,6 +9,7 @@ import { P } from "./ui/P";
 import { Heading } from "./ui/Heading";
 import { Row } from "./ui/Row";
 import Link from "next/link";
+import Section from "./ui/Section";
 
 function Home() {
   const { isDark } = useThemeContext();
@@ -23,10 +24,7 @@ function Home() {
 
   return (
     <>
-      <section
-        className="h-screen dark:bg-landing-dark bg-landing-light"
-        id="home"
-      >
+      <Section className="h-screen" id="home" theme="primary">
         <Header />
         <Row justify={"center"} align={"center"} className="h-home" gap={"2xl"}>
           <Row
@@ -63,7 +61,7 @@ function Home() {
             <div className="rightEye eyes"></div>
           </div>
         </Row>
-      </section>
+      </Section>
     </>
   );
 }
