@@ -31,6 +31,7 @@ export const headingVariants = cva("font-bold", {
     },
     boldness: {
       normal: "font-normal",
+      "semi-bold": "font-semibold",
       bold: "font-bold",
     },
   },

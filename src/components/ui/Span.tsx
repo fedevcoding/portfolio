@@ -57,7 +57,7 @@ interface Props
   children: ReactNode;
 }
 
-export const P = ({
+export const Span = ({
   children,
   className,
   size,
@@ -69,7 +69,7 @@ export const P = ({
   ...props
 }: Props) => {
   return (
-    <p
+    <span
       {...props}
       className={cn(
         pVariants({
@@ -84,6 +84,6 @@ export const P = ({
       )}
     >
       {children}
-    </p>
+    </span>
   );
 };

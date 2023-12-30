@@ -7,26 +7,33 @@ import { PROJECTS } from "@/data/projects";
 import Link from "next/link";
 import { github, url } from "@/assets";
 import Line from "./ui/Line";
+import { P } from "./ui/P";
+import { Heading } from "./ui/Heading";
+import { Row } from "./ui/Row";
+import { Span } from "./ui/Span";
 
 function Projects() {
   const [selectedTab, setSelectedTab] = useState(PROJECTS[0]);
 
   return (
-    <div>
+    <>
       <section
         className="min-h-screen dark:bg-primary-dark bg-primary-light pb-20"
         id="projects"
       >
-        <div className="text-center py-24">
-          <p className="dark:text-secondary-dark text-secondary-light">
+        <div className="py-24">
+          <P theme={"secondary"} align={"center"}>
             Some of my
-          </p>
-          <h1 className="text-[48px] font-[800] leading-normal tracking-[4.8px]">
+          </P>
+          <Heading letterGap={"xl"} align={"center"}>
             PROJECTS
-          </h1>
+          </Heading>
         </div>
 
-        <div className="h-[70vh] w-[70vw] bg-landing-dark rounded-lg mx-auto projects-box flex flex-col">
+        <Row
+          className="h-[70vh] w-[70vw] dark:bg-landing-dark bg-landing-light rounded-lg mx-auto projects-box"
+          direction={"col"}
+        >
           <nav>
             <ul>
               {PROJECTS.map((item) => (
@@ -36,7 +43,9 @@ function Projects() {
                   onClick={() => setSelectedTab(item)}
                 >
                   <img src={item.icon} alt={item.label} className="w-[27px]" />
-                  <p className="text-[15px] font-semibold">{item.label}</p>
+                  <P boldness={"semi-bold"} size={"sm"}>
+                    {item.label}
+                  </P>
                   {item === selectedTab ? (
                     <motion.div className="underline" layoutId="underline" />
                   ) : null}
@@ -52,73 +61,84 @@ function Projects() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="flex flex-col items-center h-full"
               >
-                <h2 className="text-[32px] font-semibold text-center py-14">
-                  {selectedTab.label}
-                </h2>
-                <div className="flex items-center justify-evenly">
-                  {selectedTab.type === "image" ? (
-                    <Link
-                      href={selectedTab.url || ""}
-                      target="_blank"
-                      className="w-[40%]"
-                    >
-                      <img
+                <Row direction={"col"} align={"center"} fullHeight>
+                  <Heading
+                    className="py-14"
+                    boldness={"semi-bold"}
+                    variant={"h2"}
+                  >
+                    {selectedTab.label}
+                  </Heading>
+                  <Row align={"center"} justify={"evenly"}>
+                    {selectedTab.type === "image" ? (
+                      <Link
+                        href={selectedTab.url || ""}
+                        target="_blank"
+                        className="w-[40%]"
+                      >
+                        <img
+                          src={selectedTab.preview}
+                          alt={selectedTab.label}
+                          className="w-full rounded-lg"
+                        />
+                      </Link>
+                    ) : (
+                      <video
                         src={selectedTab.preview}
-                        alt={selectedTab.label}
-                        className="w-full rounded-lg"
+                        className="w-[40%] rounded-lg"
+                        controls
+                        muted
                       />
-                    </Link>
-                  ) : (
-                    <video
-                      src={selectedTab.preview}
-                      className="w-[40%] rounded-lg"
-                      controls
-                      muted
-                    />
-                  )}
-                  <div className="mt-10 text-lg w-[40%]">
-                    <p>
-                      <span className="text-secondary-dark">Name:</span>&nbsp;
-                      {selectedTab.name}
-                    </p>
-                    <p>
-                      <span className="text-secondary-dark">Description:</span>
-                      &nbsp;
-                      {selectedTab.description}
-                    </p>
-                    <p>
-                      <span className="text-secondary-dark">Technologies:</span>
-                      &nbsp;
-                      {selectedTab.technologies.join(", ")}
-                    </p>
-                    <div className="mt-6 flex items-center gap-8">
-                      {selectedTab.repo ? (
-                        <Link href={selectedTab.repo} target="_blank">
-                          <img
-                            src={github.src}
-                            alt="github"
-                            className="invert"
-                          />
-                        </Link>
-                      ) : null}
+                    )}
+                    <Row direction={"col"} className="w-[40%]">
+                      <P size={"lg"}>
+                        <Span theme={"secondary"} boldness={"semi-bold"}>
+                          Name:
+                        </Span>
+                        &nbsp;
+                        {selectedTab.name}
+                        <br />
+                        <Span theme={"secondary"} boldness={"semi-bold"}>
+                          Description:
+                        </Span>
+                        &nbsp;
+                        {selectedTab.description}
+                        <br />
+                        <Span theme={"secondary"} boldness={"semi-bold"}>
+                          Technologies:
+                        </Span>
+                        &nbsp;
+                        {selectedTab.technologies.join(", ")}
+                        <br />
+                      </P>
+                      <Row align={"center"} gap={"sm"} className="mt-6 flex">
+                        {selectedTab.repo ? (
+                          <Link href={selectedTab.repo} target="_blank">
+                            <img
+                              src={github.src}
+                              alt="github"
+                              className="invert"
+                            />
+                          </Link>
+                        ) : null}
 
-                      {selectedTab.url ? (
-                        <Link href={selectedTab.url} target="_blank">
-                          <img src={url.src} alt="link" />
-                        </Link>
-                      ) : null}
-                    </div>
-                  </div>
-                </div>
+                        {selectedTab.url ? (
+                          <Link href={selectedTab.url} target="_blank">
+                            <img src={url.src} alt="link" />
+                          </Link>
+                        ) : null}
+                      </Row>
+                    </Row>
+                  </Row>
+                </Row>
               </motion.div>
             </AnimatePresence>
           </main>
-        </div>
+        </Row>
       </section>
       <Line />
-    </div>
+    </>
   );
 }
 
