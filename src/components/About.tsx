@@ -8,6 +8,7 @@ import { P } from "./ui/P";
 import { Heading } from "./ui/Heading";
 import Line from "./ui/Line";
 import Section from "./ui/Section";
+import { Img } from "./ui/Img";
 
 function About() {
   const { isDark } = useThemeContext();
@@ -15,7 +16,7 @@ function About() {
   return (
     <>
       <Section className="h-screen" id="about" theme="secondary">
-        <img
+        <Img
           src={isDark ? waveDark.src : waveLight.src}
           className="w-screen"
           alt="wave"

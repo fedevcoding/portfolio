@@ -3,6 +3,7 @@ import { Row } from "./ui/Row";
 import { P } from "./ui/P";
 import Link from "next/link";
 import Section from "./ui/Section";
+import { Img } from "./ui/Img";
 
 function Footer() {
   return (
@@ -10,14 +11,49 @@ function Footer() {
       <Section theme="secondary">
         <Row className="py-10" direction={"col"} align={"center"} gap={"sm"}>
           <Row align={"center"} gap={"md"}>
-            <img src={github.src} alt="Github" className="invert" />
-            <img src={discord.src} alt="Discord" className="invert" />
-            <img src={email.src} alt="Email" className="invert" />
-            <img src={telegram.src} alt="Telegram" />
+            <Img
+              src={github.src}
+              alt="Github"
+              size={"sm-2"}
+              fit={"contain"}
+              aspect="square"
+              invertDark
+            />
+            <Img
+              src={discord.src}
+              alt="Discord"
+              size={"sm-2"}
+              fit={"contain"}
+              aspect="square"
+              invertDark
+            />
+            <Img
+              src={email.src}
+              alt="Email"
+              size={"sm-2"}
+              fit={"contain"}
+              aspect="square"
+              invertDark
+            />
+            <Img
+              src={telegram.src}
+              alt="Telegram"
+              size={"sm-2"}
+              fit={"contain"}
+              aspect="square"
+              invertLight
+            />
           </Row>
           <Row align={"center"} gap={"sm"}>
             <P>© {new Date().getFullYear()} fedevcoding</P>
-            <img src={pipe.src} alt="pipe" className="invert" />
+            <Img
+              src={pipe.src}
+              alt="pipe"
+              size={"sm-2"}
+              fit={"contain"}
+              aspect="square"
+              invertDark
+            />
             <Link href={"mailto:fedevcoding@gmail.com"}>
               <P>fedevcoding@gmail.com</P>
             </Link>

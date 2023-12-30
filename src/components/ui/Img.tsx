@@ -41,6 +41,8 @@ type Props = Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> &
   VariantProps<typeof imgVariants> & {
     alt: string;
     src: string;
+    invertLight?: boolean;
+    invertDark?: boolean;
   };
 
 export const Img = ({
@@ -51,13 +53,20 @@ export const Img = ({
   src,
   alt,
   fit,
+  invertLight = false,
+  invertDark = false,
   ...props
 }: Props) => {
   return (
     <img
       {...props}
       src={src}
-      className={cn(imgVariants({ border, size, aspect, fit, className }))}
+      className={cn(
+        `${
+          invertLight ? "invert dark:invert-0" : invertDark ? "dark:invert" : ""
+        }`,
+        imgVariants({ border, size, aspect, fit, className })
+      )}
       alt={alt}
     />
   );

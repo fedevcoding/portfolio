@@ -12,6 +12,7 @@ import { Heading } from "./ui/Heading";
 import { Row } from "./ui/Row";
 import { Span } from "./ui/Span";
 import Section from "./ui/Section";
+import { Img } from "./ui/Img";
 
 function Projects() {
   const [selectedTab, setSelectedTab] = useState(PROJECTS[0]);
@@ -41,10 +42,13 @@ function Projects() {
                     className={item === selectedTab ? "selected" : ""}
                     onClick={() => setSelectedTab(item)}
                   >
-                    <img
+                    <Img
+                      invertLight
                       src={item.icon}
                       alt={item.label}
-                      className="w-[27px]"
+                      size={"sm"}
+                      aspect={"square"}
+                      fit={"contain"}
                     />
                     <P boldness={"semi-bold"} size={"sm"}>
                       {item.label}
@@ -80,7 +84,7 @@ function Projects() {
                           target="_blank"
                           className="w-[40%]"
                         >
-                          <img
+                          <Img
                             src={selectedTab.preview}
                             alt={selectedTab.label}
                             className="w-full rounded-lg"
@@ -118,17 +122,27 @@ function Projects() {
                         <Row align={"center"} gap={"sm"} className="mt-6 flex">
                           {selectedTab.repo ? (
                             <Link href={selectedTab.repo} target="_blank">
-                              <img
+                              <Img
                                 src={github.src}
                                 alt="github"
-                                className="invert"
+                                size={"md"}
+                                aspect={"square"}
+                                fit={"contain"}
+                                invertDark
                               />
                             </Link>
                           ) : null}
 
                           {selectedTab.url ? (
                             <Link href={selectedTab.url} target="_blank">
-                              <img src={url.src} alt="link" />
+                              <Img
+                                src={url.src}
+                                alt="link"
+                                size={"sm-2"}
+                                aspect={"square"}
+                                fit={"contain"}
+                                invertLight
+                              />
                             </Link>
                           ) : null}
                         </Row>
