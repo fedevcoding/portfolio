@@ -11,6 +11,7 @@ import { Row } from "./ui/Row";
 import Link from "next/link";
 import Section from "./ui/Section";
 import { Img } from "./ui/Img";
+import { useBreakPoint } from "@/context/BreakPoints";
 
 function Home() {
   const { isDark } = useThemeContext();

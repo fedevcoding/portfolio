@@ -31,11 +31,11 @@ function Projects() {
 
         <Section
           theme="primary"
-          className="h-[70vh] w-[70vw] rounded-lg mx-auto projects-box"
+          className="w-[70vw] rounded-lg mx-auto projects-box pb-10"
         >
           <Row direction={"col"} fullHeight>
             <nav>
-              <ul className="flex">
+              <ul className="flex flex-wrap">
                 {PROJECTS.map((item) => (
                   <li
                     key={item.label}
@@ -95,6 +95,8 @@ function Projects() {
                           src={selectedTab.preview}
                           alt={selectedTab.label}
                           className="w-full rounded-lg"
+                          aspect={"video"}
+                          fit={"contain"}
                         />
                       </Link>
                     ) : (

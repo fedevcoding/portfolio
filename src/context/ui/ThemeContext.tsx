@@ -28,7 +28,6 @@ export function ThemeProvider({ children }: Child) {
   }
 
   function initialThemeHandler(): void {
-    console.log("initialThemeHandler");
     if (isLocalStorageEmpty()) {
       localStorage.setItem("isDarkTheme", `true`);
       toggleClasses(true);

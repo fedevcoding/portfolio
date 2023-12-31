@@ -21,6 +21,7 @@ export const imgVariants = cva("", {
     aspect: {
       none: "",
       square: "aspect-square",
+      video: "aspect-video",
     },
     fit: {
       cover: "object-cover",

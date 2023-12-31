@@ -34,3 +34,14 @@ body.light{
     font-size: 14px;
   }
 }
+
+@media (max-width: 1280px) {
+  html{
+    font-size: 12px;
+  }
+}
+@media (max-width: 980px) {
+  html{
+    font-size: 10px;
+  }
+}

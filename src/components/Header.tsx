@@ -5,13 +5,16 @@ import { useThemeContext } from "@/context";
 import { Row } from "./ui/Row";
 import Link from "next/link";
 import { Img } from "./ui/Img";
+import { useBreakPoint } from "@/context/BreakPoints";
 
 function Header() {
+  const { max } = useBreakPoint();
+
   const { isDark, toggleTheme } = useThemeContext();
 
   return (
     <header className="h-header">
-      <Row align={"center"} justify={"center"} gap={"5xl"}>
+      <Row align={"center"} justify={"center"} gap={max.isLg ? "2xl" : "5xl"}>
         <Link href="/">
           <Img alt="logo" src={logo.src} size={"lg"} />
         </Link>

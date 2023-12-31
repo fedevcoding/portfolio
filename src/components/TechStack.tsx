@@ -8,11 +8,14 @@ import { Heading } from "./ui/Heading";
 import { Row } from "./ui/Row";
 import Line from "./ui/Line";
 import Section from "./ui/Section";
+import { useBreakPoint } from "@/context/BreakPoints";
 
 function TechStack() {
+  const { max } = useBreakPoint();
+
   return (
     <>
-      <Section className="h-screen pb-20" id="tech-stack" theme="secondary">
+      <Section className="pb-32" id="tech-stack" theme="secondary">
         <div className="py-24">
           <P theme={"secondary"} align={"center"}>
             Some of my
@@ -22,7 +25,13 @@ function TechStack() {
           </Heading>
         </div>
 
-        <Row justify={"center"} align={"center"} gap={"3xl"}>
+        <Row
+          justify={"center"}
+          align={"center"}
+          gap={max.isXl ? "xl" : "3xl"}
+          wrap={max.isMd ? "wrap" : "none"}
+          className="px-20"
+        >
           <Card
             name="Front End"
             mainIcon={html.src}
