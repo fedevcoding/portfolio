@@ -28,7 +28,7 @@ function About() {
           align={"center"}
           gap={"3xl"}
           wrap={max.isMd ? "wrap" : "none"}
-          className="px-40"
+          className={`${max.isSm ? " px-10" : "px-40"}`}
         >
           <motion.div
             initial={{ x: -50, opacity: 0.5 }}
@@ -51,7 +51,7 @@ function About() {
           >
             <Row
               direction="col"
-              className={`${max.isMd ? "max-w-[50vw]" : "max-w-[25vw]"}`}
+              className={`${max.isMd ? "max-w-[60vw]" : "max-w-[25vw]"}`}
               align={max.isMd ? "center" : "start"}
             >
               <P theme={"secondary"}>A little bit</P>

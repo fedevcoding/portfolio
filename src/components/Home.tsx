@@ -45,14 +45,18 @@ function Home() {
             fullHeight
             justify={"center"}
             gap={"md"}
-            align={"start"}
+            align={max.isSm ? "center" : "start"}
           >
-            <Heading letterGap={"2xl"} variant={"h1"}>
+            <Heading
+              letterGap={"2xl"}
+              variant={"h1"}
+              align={max.isSm ? "center" : "left"}
+            >
               FEDERICO
               <br />
               CAVALLINI
             </Heading>
-            <P size={"lg"}>
+            <P size={"lg"} align={max.isSm ? "center" : "left"}>
               Hi, I&apos;m Fedev
               <br />A young full-stack developer from Italy
             </P>
