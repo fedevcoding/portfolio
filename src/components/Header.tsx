@@ -6,10 +6,12 @@ import { Row } from "./ui/Row";
 import Link from "next/link";
 import { Img } from "./ui/Img";
 import { useBreakPoint } from "@/context/BreakPoints";
+import Burger from "./Burger";
+import { useCycle } from "framer-motion";
 
 function Header() {
   const { max } = useBreakPoint();
-
+  const [isOpen, toggle] = useCycle(false, true);
   const { isDark, toggleTheme } = useThemeContext();
 
   return (
@@ -18,7 +20,20 @@ function Header() {
         <Link href="/">
           <Img alt="logo" src={logo.src} size={"lg"} />
         </Link>
-        {max.isMd ? null : (
+        {max.isMd ? (
+          <Row gap={"md"} align={"center"}>
+            <Img
+              src={isDark ? moon.src : sun.src}
+              alt="theme"
+              onClick={toggleTheme}
+              aspect={"square"}
+              fit="contain"
+              size={"sm-2"}
+              className="cursor-pointer"
+            />
+            <Burger isOpen={isOpen} toggle={toggle} />
+          </Row>
+        ) : (
           <>
             <nav>
               <ul>
