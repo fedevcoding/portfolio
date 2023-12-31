@@ -13,13 +13,15 @@ import { Row } from "./ui/Row";
 import { Span } from "./ui/Span";
 import Section from "./ui/Section";
 import { Img } from "./ui/Img";
+import { useBreakPoint } from "@/context/BreakPoints";
 
 function Projects() {
+  const { max } = useBreakPoint();
   const [selectedTab, setSelectedTab] = useState(PROJECTS[0]);
 
   return (
     <>
-      <Section className="min-h-screen pb-20" id="projects" theme="secondary">
+      <Section className="pb-20" id="projects" theme="secondary">
         <div className="py-24">
           <P theme={"secondary"} align={"center"}>
             Some of my
@@ -84,17 +86,24 @@ function Projects() {
                   >
                     {selectedTab.label}
                   </Heading>
-                  <Row align={"center"} justify={"evenly"}>
+                  <Row
+                    align={"center"}
+                    justify={"evenly"}
+                    direction={max.isSm ? "col" : "row"}
+                    gap={max.isSm ? "md" : "none"}
+                  >
                     {selectedTab.type === "image" ? (
                       <Link
                         href={selectedTab.url || ""}
                         target="_blank"
-                        className="w-[40%]"
+                        className={`${
+                          max.isSm ? "order-2 w-[80%]" : "w-[40%]"
+                        } `}
                       >
                         <Img
                           src={selectedTab.preview}
                           alt={selectedTab.label}
-                          className="w-full rounded-lg"
+                          className={`w-full rounded-lg`}
                           aspect={"video"}
                           fit={"contain"}
                         />
@@ -102,12 +111,17 @@ function Projects() {
                     ) : (
                       <video
                         src={selectedTab.preview}
-                        className="w-[40%] rounded-lg"
+                        className={`${
+                          max.isSm ? "order-2 w-[80%]" : "w-[40%]"
+                        } rounded-lg`}
                         controls
                         muted
                       />
                     )}
-                    <Row direction={"col"} className="w-[40%]">
+                    <Row
+                      direction={"col"}
+                      className={`${max.isSm ? "w-[80%]" : "w-[40%]"}`}
+                    >
                       <P size={"lg"}>
                         <Span theme={"secondary"} boldness={"semi-bold"}>
                           Name:

@@ -18,77 +18,81 @@ function Header() {
         <Link href="/">
           <Img alt="logo" src={logo.src} size={"lg"} />
         </Link>
-        <nav>
-          <ul>
-            <Row gap={"md"}>
-              <li>
-                <Link href="#home">Home</Link>
-              </li>
-              <li>
-                <Link href="#about">About</Link>
-              </li>
-              <li>
-                <Link href={"#tech-stack"}>Tech Stack</Link>
-              </li>
-              <li>
-                <Link href={"#projects"}>Projects</Link>
-              </li>
-            </Row>
-          </ul>
-        </nav>
-        <Row align={"center"} gap={"sm"}>
-          <Img
-            src={isDark ? moon.src : sun.src}
-            alt="theme"
-            onClick={toggleTheme}
-            aspect={"square"}
-            fit="contain"
-            size={"sm-2"}
-            className="cursor-pointer"
-          />
-          <Img
-            src={pipe.src}
-            alt="pipe"
-            className="dark:invert"
-            aspect={"square"}
-            fit="contain"
-            size={"sm-2"}
-          />
-          <Link href={"https://github.com/fedevcoding"} target="_blank">
-            <Img
-              src={github.src}
-              alt="github"
-              className="dark:invert"
-              aspect={"square"}
-              fit="contain"
-              size={"sm-2"}
-            />
-          </Link>
-          <Link
-            href={"https://discordapp.com/users/646076973025722388"}
-            target="_blank"
-          >
-            <Img
-              src={discord.src}
-              alt="discord"
-              className="dark:invert"
-              aspect={"square"}
-              fit="contain"
-              size={"sm-2"}
-            />
-          </Link>
+        {max.isMd ? null : (
+          <>
+            <nav>
+              <ul>
+                <Row gap={"md"}>
+                  <li>
+                    <Link href="#home">Home</Link>
+                  </li>
+                  <li>
+                    <Link href="#about">About</Link>
+                  </li>
+                  <li>
+                    <Link href={"#tech-stack"}>Tech Stack</Link>
+                  </li>
+                  <li>
+                    <Link href={"#projects"}>Projects</Link>
+                  </li>
+                </Row>
+              </ul>
+            </nav>
+            <Row align={"center"} gap={"sm"}>
+              <Img
+                src={isDark ? moon.src : sun.src}
+                alt="theme"
+                onClick={toggleTheme}
+                aspect={"square"}
+                fit="contain"
+                size={"sm-2"}
+                className="cursor-pointer"
+              />
+              <Img
+                src={pipe.src}
+                alt="pipe"
+                className="dark:invert"
+                aspect={"square"}
+                fit="contain"
+                size={"sm-2"}
+              />
+              <Link href={"https://github.com/fedevcoding"} target="_blank">
+                <Img
+                  src={github.src}
+                  alt="github"
+                  className="dark:invert"
+                  aspect={"square"}
+                  fit="contain"
+                  size={"sm-2"}
+                />
+              </Link>
+              <Link
+                href={"https://discordapp.com/users/646076973025722388"}
+                target="_blank"
+              >
+                <Img
+                  src={discord.src}
+                  alt="discord"
+                  className="dark:invert"
+                  aspect={"square"}
+                  fit="contain"
+                  size={"sm-2"}
+                />
+              </Link>
 
-          <Link href={"mailto:fedevcoding@gmail.com"} target="_blank">
-            <Img
-              src={email.src}
-              alt="email"
-              className="dark:invert"
-              aspect={"square"}
-              fit="contain"
-              size={"sm-2"}
-            />
-          </Link>
-        </Row>
+              <Link href={"mailto:fedevcoding@gmail.com"} target="_blank">
+                <Img
+                  src={email.src}
+                  alt="email"
+                  className="dark:invert"
+                  aspect={"square"}
+                  fit="contain"
+                  size={"sm-2"}
+                />
+              </Link>
+            </Row>
+          </>
+        )}
       </Row>
     </header>
   );

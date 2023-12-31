@@ -15,6 +15,7 @@ import { useBreakPoint } from "@/context/BreakPoints";
 
 function Home() {
   const { isDark } = useThemeContext();
+  const { max } = useBreakPoint();
 
   useEffect(() => {
     document.addEventListener("mousemove", animateEyes);
@@ -26,9 +27,19 @@ function Home() {
 
   return (
     <>
-      <Section className="h-screen" id="home" theme="primary">
+      <Section
+        className={`${max.isSm ? "" : "h-screen"}`}
+        id="home"
+        theme="primary"
+      >
         <Header />
-        <Row justify={"center"} align={"center"} className="h-home" gap={"2xl"}>
+        <Row
+          justify={"center"}
+          align={"center"}
+          className={`${max.isSm ? "pb-20" : "h-home"} px-20`}
+          gap={max.isMd ? "xl" : "2xl"}
+          wrap={max.isSm ? "wrap" : "none"}
+        >
           <Row
             direction={"col"}
             fullHeight
