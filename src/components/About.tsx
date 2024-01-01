@@ -1,5 +1,3 @@
-"use client";
-
 import { meDark, meLight, waveLight, waveDark } from "@/assets";
 import { useThemeContext } from "@/context";
 import { motion } from "framer-motion";
@@ -19,7 +17,7 @@ function About() {
     <>
       <Section className="pb-32" id="about" theme="secondary">
         <Img
-          src={isDark ? waveDark.src : waveLight.src}
+          src={isDark ? waveDark : waveLight}
           className="w-screen"
           alt="wave"
         />
@@ -37,11 +35,7 @@ function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className={`${max.isMd ? "order-2" : "order-none"}`}
           >
-            <Img
-              size={"3xl"}
-              src={isDark ? meDark.src : meLight.src}
-              alt="Me"
-            />
+            <Img size={"3xl"} src={isDark ? meDark : meLight} alt="Me" />
           </motion.div>
           <motion.div
             initial={{ x: 50, opacity: 0.5 }}

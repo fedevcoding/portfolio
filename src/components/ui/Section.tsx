@@ -1,5 +1,5 @@
 import { cn } from "@/lib";
-import React, { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
 interface Props extends HTMLAttributes<HTMLElement> {
   theme: "primary" | "secondary";

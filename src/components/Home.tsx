@@ -1,5 +1,3 @@
-"use client";
-
 import { homePfpDark, homePfpLight } from "@/assets";
 import Header from "./Header";
 import "@/styles/Home.scss";
@@ -8,7 +6,6 @@ import { useEffect } from "react";
 import { P } from "./ui/P";
 import { Heading } from "./ui/Heading";
 import { Row } from "./ui/Row";
-import Link from "next/link";
 import Section from "./ui/Section";
 import { Img } from "./ui/Img";
 import { useBreakPoint } from "@/context/BreakPoints";
@@ -61,16 +58,16 @@ function Home() {
               <br />A young full-stack developer from Italy
             </P>
 
-            <Link href={"#about"}>
+            <a href={"#about"}>
               <button className="dark:bg-secondary-dark bg-secondary-light text-2xl text-black py-4 px-12 rounded-lg">
                 About Me
               </button>
-            </Link>
+            </a>
           </Row>
 
           <div className="relative">
             <Img
-              src={isDark ? homePfpDark.src : homePfpLight.src}
+              src={isDark ? homePfpDark : homePfpLight}
               alt="Pfp"
               size={"3xl"}
             />
@@ -88,10 +85,10 @@ export default Home;
 function animateEyes(e: MouseEvent) {
   const eyes = document.querySelectorAll(".eyes");
   eyes.forEach((eye) => {
-    let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
-    let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
-    let radian = Math.atan2(e.pageX - x, e.pageY - y);
-    let rotate = radian * (180 / Math.PI) * -1 + 270;
+    const x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+    const y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+    const radian = Math.atan2(e.pageX - x, e.pageY - y);
+    const rotate = radian * (180 / Math.PI) * -1 + 270;
     if (eye instanceof HTMLElement) {
       eye.style.transform = `rotate(${rotate}deg)`;
     }

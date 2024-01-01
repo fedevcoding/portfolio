@@ -1,5 +1,3 @@
-"use client";
-
 import { code, html, tools } from "@/assets";
 import Card from "./Card";
 import { techStack } from "@/data/techStack";
@@ -32,13 +30,9 @@ function TechStack() {
           wrap={max.isMd ? "wrap" : "none"}
           className="px-20"
         >
-          <Card
-            name="Front End"
-            mainIcon={html.src}
-            icons={techStack.frontEnd}
-          />
-          <Card name="Back End" mainIcon={code.src} icons={techStack.backEnd} />
-          <Card name="Other" mainIcon={tools.src} icons={techStack.other} />
+          <Card name="Front End" mainIcon={html} icons={techStack.frontEnd} />
+          <Card name="Back End" mainIcon={code} icons={techStack.backEnd} />
+          <Card name="Other" mainIcon={tools} icons={techStack.other} />
         </Row>
       </Section>
       <Line />

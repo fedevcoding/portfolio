@@ -1,9 +1,7 @@
-"use client";
-
 import { discord, email, github, logo, moon, pipe, sun } from "@/assets";
 import { useThemeContext } from "@/context";
 import { Row } from "./ui/Row";
-import Link from "next/link";
+
 import { Img } from "./ui/Img";
 import { useBreakPoint } from "@/context/BreakPoints";
 import Burger from "./Burger";
@@ -17,13 +15,13 @@ function Header() {
   return (
     <header className="h-header">
       <Row align={"center"} justify={"center"} gap={max.isLg ? "2xl" : "5xl"}>
-        <Link href="/">
-          <Img alt="logo" src={logo.src} size={"lg"} />
-        </Link>
+        <a href="/">
+          <Img alt="logo" src={logo} size={"lg"} />
+        </a>
         {max.isMd ? (
           <Row gap={"md"} align={"center"}>
             <Img
-              src={isDark ? moon.src : sun.src}
+              src={isDark ? moon : sun}
               alt="theme"
               onClick={toggleTheme}
               aspect={"square"}
@@ -39,23 +37,23 @@ function Header() {
               <ul>
                 <Row gap={"md"}>
                   <li>
-                    <Link href="#home">Home</Link>
+                    <a href="#home">Home</a>
                   </li>
                   <li>
-                    <Link href="#about">About</Link>
+                    <a href="#about">About</a>
                   </li>
                   <li>
-                    <Link href={"#tech-stack"}>Tech Stack</Link>
+                    <a href={"#tech-stack"}>Tech Stack</a>
                   </li>
                   <li>
-                    <Link href={"#projects"}>Projects</Link>
+                    <a href={"#projects"}>Projects</a>
                   </li>
                 </Row>
               </ul>
             </nav>
             <Row align={"center"} gap={"sm"}>
               <Img
-                src={isDark ? moon.src : sun.src}
+                src={isDark ? moon : sun}
                 alt="theme"
                 onClick={toggleTheme}
                 aspect={"square"}
@@ -64,47 +62,47 @@ function Header() {
                 className="cursor-pointer"
               />
               <Img
-                src={pipe.src}
+                src={pipe}
                 alt="pipe"
                 className="dark:invert"
                 aspect={"square"}
                 fit="contain"
                 size={"sm-2"}
               />
-              <Link href={"https://github.com/fedevcoding"} target="_blank">
+              <a href={"https://github.com/fedevcoding"} target="_blank">
                 <Img
-                  src={github.src}
+                  src={github}
                   alt="github"
                   className="dark:invert"
                   aspect={"square"}
                   fit="contain"
                   size={"sm-2"}
                 />
-              </Link>
-              <Link
+              </a>
+              <a
                 href={"https://discordapp.com/users/646076973025722388"}
                 target="_blank"
               >
                 <Img
-                  src={discord.src}
+                  src={discord}
                   alt="discord"
                   className="dark:invert"
                   aspect={"square"}
                   fit="contain"
                   size={"sm-2"}
                 />
-              </Link>
+              </a>
 
-              <Link href={"mailto:fedevcoding@gmail.com"} target="_blank">
+              <a href={"mailto:fedevcoding@gmail.com"} target="_blank">
                 <Img
-                  src={email.src}
+                  src={email}
                   alt="email"
                   className="dark:invert"
                   aspect={"square"}
                   fit="contain"
                   size={"sm-2"}
                 />
-              </Link>
+              </a>
             </Row>
           </>
         )}

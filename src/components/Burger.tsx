@@ -1,6 +1,5 @@
-import React from "react";
 import "@/styles/Burger.scss";
-import { motion } from "framer-motion";
+import { SVGMotionProps, motion } from "framer-motion";
 
 function Burger({ isOpen, toggle }: { isOpen: boolean; toggle: () => void }) {
   return (
@@ -39,7 +38,7 @@ function Burger({ isOpen, toggle }: { isOpen: boolean; toggle: () => void }) {
 
 export default Burger;
 
-const Path = (props: any) => (
+const Path = (props: SVGMotionProps<SVGPathElement>) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"

@@ -1,5 +1,3 @@
-"use client";
-
 import { Child, ThemeType } from "@/types";
 import { createContext, useContext, useEffect, useState } from "react";
 

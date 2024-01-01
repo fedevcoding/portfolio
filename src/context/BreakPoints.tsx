@@ -1,5 +1,4 @@
-"use client";
-import React, {
+import {
   FC,
   ReactNode,
   createContext,

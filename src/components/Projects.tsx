@@ -1,10 +1,9 @@
-"use client";
 import "@/styles/Projects.scss";
 import { useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { PROJECTS } from "@/data/projects";
-import Link from "next/link";
+
 import { github, url } from "@/assets";
 import Line from "./ui/Line";
 import { P } from "./ui/P";
@@ -93,7 +92,7 @@ function Projects() {
                     gap={max.isSm ? "md" : "none"}
                   >
                     {selectedTab.type === "image" ? (
-                      <Link
+                      <a
                         href={selectedTab.url || ""}
                         target="_blank"
                         className={`${
@@ -107,7 +106,7 @@ function Projects() {
                           aspect={"video"}
                           fit={"contain"}
                         />
-                      </Link>
+                      </a>
                     ) : (
                       <video
                         src={selectedTab.preview}
@@ -144,29 +143,29 @@ function Projects() {
                       </P>
                       <Row align={"center"} gap={"sm"} className="mt-6 flex">
                         {selectedTab.repo ? (
-                          <Link href={selectedTab.repo} target="_blank">
+                          <a href={selectedTab.repo} target="_blank">
                             <Img
-                              src={github.src}
+                              src={github}
                               alt="github"
                               size={"md"}
                               aspect={"square"}
                               fit={"contain"}
                               invertDark
                             />
-                          </Link>
+                          </a>
                         ) : null}
 
                         {selectedTab.url ? (
-                          <Link href={selectedTab.url} target="_blank">
+                          <a href={selectedTab.url} target="_blank">
                             <Img
-                              src={url.src}
+                              src={url}
                               alt="link"
                               size={"sm-2"}
                               aspect={"square"}
                               fit={"contain"}
                               invertLight
                             />
-                          </Link>
+                          </a>
                         ) : null}
                       </Row>
                     </Row>
