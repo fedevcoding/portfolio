@@ -38,6 +38,10 @@ export { default as bot } from "./icons/bot.svg";
 export { default as keyboard } from "./icons/keyboard.svg";
 export { default as garage } from "./icons/garage.svg";
 export { default as telegram } from "./icons/telegram.svg";
+export { default as home } from "./icons/home.svg";
+export { default as about } from "./icons/info.svg";
+export { default as projects } from "./icons/tasks.svg";
+export { default as tech } from "./icons/tech.svg";
 
 export { default as foodStudio } from "./previews/food-studio.png";
 export { default as urlShortener } from "./previews/url-shortener.png";
