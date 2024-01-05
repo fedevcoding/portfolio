@@ -21,14 +21,19 @@
   .leftEye {
     left: 37%;
     top: 38%;
-
-    @media (min-screen: 960px) {
-      left: 0%;
-      top: 0%;
+    @media (max-width: 960px) {
+      left: 39.8%;
+      top: 37.8%;
+      transform: rotate(0deg) !important;
     }
   }
   .rightEye {
     right: 40%;
     top: 38%;
+    @media (max-width: 960px) {
+      right: 37%;
+      top: 37.8%;
+      transform: rotate(0deg) !important;
+    }
   }
 }
