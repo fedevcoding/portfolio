@@ -1,5 +1,5 @@
 import { about, discord, email, github, home, projects, tech } from "@/assets";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, Cycle } from "framer-motion";
 import { motion } from "framer-motion";
 import { Row } from "./ui/Row";
 import { Img } from "./ui/Img";
@@ -7,7 +7,7 @@ import { useBlockScroll } from "@/hooks/useBlockScroll";
 import { P } from "./ui/P";
 import Line from "./ui/Line";
 
-function Drawer({ open }: { open: boolean }) {
+function Drawer({ open, toggle }: { open: boolean; toggle: Cycle }) {
   // prevent user from scrolling when burger is open
   useBlockScroll(open);
   return (
@@ -75,19 +75,19 @@ function Drawer({ open }: { open: boolean }) {
                   <P size={"3xl"}>Home</P>
                 </Row>
               </a>
-              <a href="#about">
+              <a href="#about" onClick={() => toggle()}>
                 <Row align={"center"} gap={"sm"}>
                   <Img src={about} alt="home" size={"sm-2"} invertLight />
                   <P size={"3xl"}>About</P>
                 </Row>
               </a>
-              <a href={"#tech-stack"}>
+              <a href={"#tech-stack"} onClick={() => toggle()}>
                 <Row align={"center"} gap={"sm"}>
                   <Img src={tech} alt="home" size={"sm-2"} invertLight />
                   <P size={"3xl"}>Tech Stack</P>
                 </Row>
               </a>
-              <a href={"#projects"}>
+              <a href={"#projects"} onClick={() => toggle()}>
                 <Row align={"center"} gap={"sm"}>
                   <Img src={projects} alt="home" size={"sm-2"} invertLight />
                   <P size={"3xl"}>Projects</P>

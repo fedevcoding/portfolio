@@ -16,7 +16,7 @@ function Header() {
   return (
     <header className="h-header relative">
       {/* Drawer component for mobiles */}
-      <Drawer open={max.isMd && isOpen} />
+      <Drawer open={max.isMd && isOpen} toggle={toggle} />
 
       <Row
         align={"center"}
