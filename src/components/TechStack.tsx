@@ -6,7 +6,7 @@ import { Heading } from "./ui/Heading";
 import { Row } from "./ui/Row";
 import Line from "./ui/Line";
 import Section from "./ui/Section";
-import { useBreakPoint } from "@/context/BreakPoints";
+import { useBreakPoint } from "react-use-breakpoint";
 
 function TechStack() {
   const { max } = useBreakPoint();

@@ -21,6 +21,11 @@
   .leftEye {
     left: 37%;
     top: 38%;
+
+    @media (min-screen: 960px) {
+      left: 0%;
+      top: 0%;
+    }
   }
   .rightEye {
     right: 40%;

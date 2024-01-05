@@ -15,6 +15,7 @@
     "framer-motion": "^10.16.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-use-breakpoint": "^1.2.1",
     "sass": "^1.69.6",
     "tailwind-merge": "^2.2.0"
   },

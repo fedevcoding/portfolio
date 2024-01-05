@@ -12,7 +12,7 @@ import { Row } from "./ui/Row";
 import { Span } from "./ui/Span";
 import Section from "./ui/Section";
 import { Img } from "./ui/Img";
-import { useBreakPoint } from "@/context/BreakPoints";
+import { useBreakPoint } from "react-use-breakpoint";
 
 function Projects() {
   const { max } = useBreakPoint();

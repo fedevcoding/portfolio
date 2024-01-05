@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@/context";
-import { BreakpointProvider } from "@/context/BreakPoints";
+import { BreakpointProvider } from "react-use-breakpoint";
 import Home from "@/components/Home";
 import About from "@/components/About";
 import TechStack from "@/components/TechStack";

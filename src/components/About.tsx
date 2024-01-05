@@ -7,7 +7,7 @@ import { Heading } from "./ui/Heading";
 import Line from "./ui/Line";
 import Section from "./ui/Section";
 import { Img } from "./ui/Img";
-import { useBreakPoint } from "@/context/BreakPoints";
+import { useBreakPoint } from "react-use-breakpoint";
 
 function About() {
   const { isDark } = useThemeContext();

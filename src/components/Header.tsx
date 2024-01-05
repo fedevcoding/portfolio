@@ -3,7 +3,7 @@ import { useThemeContext } from "@/context";
 import { Row } from "./ui/Row";
 
 import { Img } from "./ui/Img";
-import { useBreakPoint } from "@/context/BreakPoints";
+import { useBreakPoint } from "react-use-breakpoint";
 import Burger from "./Burger";
 import { useCycle } from "framer-motion";
 

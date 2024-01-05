@@ -8,19 +8,23 @@ import { Heading } from "./ui/Heading";
 import { Row } from "./ui/Row";
 import Section from "./ui/Section";
 import { Img } from "./ui/Img";
-import { useBreakPoint } from "@/context/BreakPoints";
+import { useBreakPoint } from "react-use-breakpoint";
 
 function Home() {
   const { isDark } = useThemeContext();
   const { max } = useBreakPoint();
 
   useEffect(() => {
-    document.addEventListener("mousemove", animateEyes);
+    if (!max.isMd) {
+      document.addEventListener("mousemove", animateEyes);
+    }
 
     return () => {
-      document.removeEventListener("mousemove", animateEyes);
+      if (!max.isMd) {
+        document.removeEventListener("mousemove", animateEyes);
+      }
     };
-  }, []);
+  }, [max]);
 
   return (
     <>
