@@ -53,12 +53,12 @@ function About() {
               <P theme={"secondary"}>Front-end/back-end developer</P>
               <br />
               <P size={"xl"} align={max.isMd ? "center" : "left"}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-                nihil possimus voluptatibus vel. At, id magni, et non asperiores
-                laborum assumenda aliquid blanditiis iusto consectetur, soluta
-                quo nobis totam magnam.
+                My name is Federico Cavallini, born in the uk and raised in
+                Florence, Italy. I’m a very young developer that has been coding
+                since early 2022 and very confident with both front-end and
+                back-end.
                 <br />
-                Lorem ipsum dolor sit amet consectetur
+                My other hobbies are mountain biking and listening to music.
               </P>
             </Row>
           </motion.div>
