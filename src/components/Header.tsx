@@ -5,6 +5,8 @@ import { Row } from "./ui/Row";
 import { Img } from "./ui/Img";
 import { useBreakPoint } from "react-use-breakpoint";
 import Burger from "./Burger";
+import { useBlockScroll } from "@/hooks/useBlockScroll";
+import Drawer from "./Drawer";
 import { useCycle } from "framer-motion";
 
 function Header() {
@@ -12,9 +14,20 @@ function Header() {
   const [isOpen, toggle] = useCycle(false, true);
   const { isDark, toggleTheme } = useThemeContext();
 
+  // prevent user from scrolling when burger is open
+  useBlockScroll(isOpen);
+
   return (
-    <header className="h-header">
-      <Row align={"center"} justify={"center"} gap={max.isLg ? "2xl" : "5xl"}>
+    <header className="h-header relative">
+      {/* Drawer component for mobiles */}
+      <Drawer open={max.isMd && isOpen} />
+
+      <Row
+        align={"center"}
+        justify={"center"}
+        gap={max.isLg ? "2xl" : "5xl"}
+        fullHeight
+      >
         <a href="/">
           <Img alt="logo" src={logo} size={"lg"} />
         </a>
