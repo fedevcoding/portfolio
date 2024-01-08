@@ -52,7 +52,7 @@ export const PROJECTS: Projects = [
     ],
     preview: urlShortener,
     repo: "https://github.com/fedevcoding/url-shortener",
-    url: "https://testshortener.netlify.app",
+    url: "https://shortener.fedev.me",
   },
   {
     icon: chat,
