@@ -6,7 +6,7 @@
   width: 0;
 }
 
-html{
+html {
   scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
   font-size: 20px;
@@ -17,34 +17,35 @@ body {
   overflow-x: hidden;
 }
 
-body.dark{
+body.dark {
   color: white;
 }
-body.light{
+
+body.light {
   color: black;
 }
 
 
 @media (max-width: 2200px) {
-  html{
+  html {
     font-size: 16px;
   }
 }
 
 @media (max-width: 1560px) {
-  html{
+  html {
     font-size: 14px;
   }
 }
 
 @media (max-width: 1280px) {
-  html{
+  html {
     font-size: 12px;
   }
 }
 
 @media (max-width: 980px) {
-  html{
+  html {
     font-size: 10px;
   }
 }

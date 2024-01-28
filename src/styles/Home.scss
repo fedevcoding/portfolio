@@ -1,39 +1,98 @@
 #home {
-  .leftEye,
-  .rightEye {
-    position: absolute;
-    border-radius: 50%;
-    height: 5%;
-    width: 5%;
-    &::after {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      width: 30%;
-      height: 30%;
-      background: #000;
-      border-radius: 50%;
-      content: " ";
-    }
+ .about-me {
+  width: 250px;
+  position: relative;
+  transition: all 0.2s linear 0s;
+
+  &:before {
+   content: "\f178";
+   font-family: FontAwesome;
+   font-size: 1.2rem;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   right: 0;
+   top: 0;
+   opacity: 0;
+   height: 100%;
+   width: 80px;
+   transition: all 0.2s linear 0s;
   }
 
-  .leftEye {
-    left: 37%;
-    top: 38%;
-    @media (max-width: 960px) {
-      left: 39.8%;
-      top: 37.8%;
-      transform: rotate(0deg) !important;
-    }
+  &:hover {
+   text-indent: -30px;
+
+   &:before {
+    opacity: 1;
+    text-indent: 0px;
+   }
   }
-  .rightEye {
-    right: 40%;
-    top: 38%;
-    @media (max-width: 960px) {
-      right: 37%;
-      top: 37.8%;
-      transform: rotate(0deg) !important;
-    }
+ }
+ header {
+  nav {
+   a {
+    text-decoration: none;
+    display: inline-block;
+   }
+
+   a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    display: block;
+    transition: width 0.5s;
+   }
+
+   a[data-dark="true"]::after {
+    background: #fff;
+   }
+
+   a[data-dark="false"]::after {
+    background: #000;
+   }
+
+   a:hover::after {
+    width: 100%;
+   }
   }
+ }
+
+ .leftEye,
+ .rightEye {
+  position: absolute;
+  border-radius: 50%;
+  height: 5%;
+  width: 5%;
+  &::after {
+   position: absolute;
+   left: 0;
+   top: 50%;
+   transform: translate(0, -50%);
+   width: 30%;
+   height: 30%;
+   background: #000;
+   border-radius: 50%;
+   content: " ";
+  }
+ }
+
+ .leftEye {
+  left: 37%;
+  top: 38%;
+  @media (max-width: 960px) {
+   left: 39.8%;
+   top: 37.8%;
+   transform: rotate(0deg) !important;
+  }
+ }
+ .rightEye {
+  right: 40%;
+  top: 38%;
+  @media (max-width: 960px) {
+   right: 37%;
+   top: 37.8%;
+   transform: rotate(0deg) !important;
+  }
+ }
 }
