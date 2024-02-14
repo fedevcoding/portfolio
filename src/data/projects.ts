@@ -10,6 +10,7 @@ import {
  chatCli,
  cvvBot,
  cliRacer,
+ garageVideo,
 } from "@/assets";
 
 import { Projects } from "@/types";
@@ -103,8 +104,7 @@ export const PROJECTS: Projects = [
   name: "Arduino garage opener",
   description: "A personal garage opener website made with ESP32.",
   technologies: ["ESP32", "C++", "Arduino IDE", "HTML", "CSS"],
-  preview:
-   "https://private-user-images.githubusercontent.com/108336526/285051664-b177c573-03f6-4368-90d5-18f7c34a3739.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDc5MzA5NjksIm5iZiI6MTcwNzkzMDY2OSwicGF0aCI6Ii8xMDgzMzY1MjYvMjg1MDUxNjY0LWIxNzdjNTczLTAzZjYtNDM2OC05MGQ1LTE4ZjdjMzRhMzczOS5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMjE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDIxNFQxNzExMDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zYmY0OTAzZjM5NDk1NjdhNTE1MzUyNTY3MjBkMjEwZWUzYWUwYzBjN2I3ZmMwYTg4ZTRlZTNjZjZiZGQwOGMwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.hKY43dhBt8EKJWtuGgDZaiw8ScGxxkLPhwba1henW3Q",
+  preview: garageVideo,
   repo: "https://github.com/fedevcoding/arduino-garage-opener",
   url: null,
  },

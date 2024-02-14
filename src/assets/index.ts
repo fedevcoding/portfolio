@@ -48,3 +48,4 @@ export { default as urlShortener } from "./previews/url-shortener.png";
 export { default as chatCli } from "./previews/chat-cli.png";
 export { default as cvvBot } from "./previews/cvv-bot.png";
 export { default as cliRacer } from "./previews/cli-racer.png";
+export { default as garageVideo } from "./previews/garage.mp4";
