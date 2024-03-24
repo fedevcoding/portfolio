@@ -1,11 +1,11 @@
 import {
- // food,
+ food,
  url,
  bot,
  keyboard,
  chat,
  garage,
- // foodStudio,
+ foodStudio,
  urlShortener,
  chatCli,
  cvvBot,
@@ -16,23 +16,23 @@ import {
 import { Projects } from "@/types";
 
 export const PROJECTS: Projects = [
- // {
- //   icon: food,
- //   type: "image",
- //   label: "Food studio",
- //   name: "Florence Food Studio",
- //   description: "A website made for florence food studio restaurant",
- //   technologies: [
- //     "NextJS",
- //     "JavaScript",
- //     "Tailwind CSS",
- //     "Netlify",
- //     "Github actions",
- //   ],
- //   preview: foodStudio,
- //   repo: null,
- //   url: "https://florencefoodstudio.com",
- // },
+ {
+  icon: food,
+  type: "image",
+  label: "Food studio",
+  name: "Florence Food Studio",
+  description: "A website made for florence food studio restaurant",
+  technologies: [
+   "NextJS",
+   "JavaScript",
+   "Tailwind CSS",
+   "Netlify",
+   "Github actions",
+  ],
+  preview: foodStudio,
+  repo: null,
+  url: "https://florencefoodstudio.com",
+ },
  {
   icon: url,
   type: "image",
