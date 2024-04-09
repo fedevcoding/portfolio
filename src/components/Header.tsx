@@ -50,11 +50,11 @@ function Header() {
            Home
           </a>
          </li>
-         <li>
+         {/* <li>
           <a href="#about" data-dark={isDark}>
            About
           </a>
-         </li>
+         </li> */}
          <li>
           <a href={"#tech-stack"} data-dark={isDark}>
            Tech Stack

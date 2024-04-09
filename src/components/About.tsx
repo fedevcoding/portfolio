@@ -50,10 +50,10 @@ function About() {
        <br />
        <P size={"xl"} align={max.isMd ? "center" : "left"}>
         My name is Federico Cavallini, born in the uk and raised in Florence,
-        Italy. I’m a very young developer that has been coding since early 2021
-        and very confident with both front-end and back-end.
+        Italy. I’m a young developer that has been coding since early 2021 and
+        very confident with both front-end and back-end.
         <br />
-        My other hobbies are mountain biking and listening to music.
+        My other hobbies are mountain biking and electronics.
        </P>
       </Row>
      </motion.div>

@@ -1,4 +1,4 @@
-import { code, html, tools } from "@/assets";
+import { code, html, tools, waveDark, waveLight } from "@/assets";
 import Card from "./Card";
 import { techStack } from "@/data/techStack";
 import { P } from "./ui/P";
@@ -9,14 +9,18 @@ import Section from "./ui/Section";
 import { useBreakPoint } from "react-use-breakpoint";
 import { motion } from "framer-motion";
 import { cn } from "@/lib";
+import { Img } from "./ui/Img";
+import { useThemeContext } from "@/context";
 
 function TechStack() {
+ const { isDark } = useThemeContext();
  const { max } = useBreakPoint();
 
  return (
   <>
    <Section className="pb-20" id="tech-stack" theme="secondary">
-    <div className="py-24">
+    <Img src={isDark ? waveDark : waveLight} className="w-screen" alt="wave" />
+    <div className="pt-4 pb-12">
      <motion.div
       initial={{ opacity: 0, translateY: -20 }}
       whileInView={{ opacity: 1, translateY: 0 }}
