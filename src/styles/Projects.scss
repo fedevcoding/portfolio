@@ -1,39 +1,39 @@
 #projects {
-  .projects-box {
-    box-shadow: 4px 4px 12.7px 3px rgba(0, 0, 0, 0.25);
-  }
+ .projects-box {
+  box-shadow: 4px 4px 12.7px 3px rgba(0, 0, 0, 0.25);
+ }
 
-  nav {
-    border-bottom: 1px solid #eeeeee;
-  }
+ nav {
+  border-bottom: 1px solid #eeeeee;
+ }
 
-  li {
-    border-radius: 5px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    padding: 20px 15px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-    position: relative;
+ li {
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 20px 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  position: relative;
 
-    @media (max-width: 1200px) {
-      min-width: 200px;
-    }
+  @media (max-width: 1200px) {
+   min-width: 200px;
   }
+ }
 
-  .underline {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 1px;
-  }
+ .underline {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  height: 2px;
+ }
 
-  li {
-    transition: background 0.2s ease-in-out;
-  }
+ li {
+  transition: background 0.2s ease-in-out;
+ }
 }

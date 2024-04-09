@@ -49,3 +49,8 @@ body.light {
     font-size: 10px;
   }
 }
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

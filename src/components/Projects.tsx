@@ -1,5 +1,5 @@
 import "@/styles/Projects.scss";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { PROJECTS } from "@/data/projects";
@@ -13,10 +13,60 @@ import { Span } from "./ui/Span";
 import Section from "./ui/Section";
 import { Img } from "./ui/Img";
 import { useBreakPoint } from "react-use-breakpoint";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
+const SCROLL_AMOUNT = 200;
 
 function Projects() {
  const { max } = useBreakPoint();
  const [selectedTab, setSelectedTab] = useState(PROJECTS[0]);
+
+ const scrollbarRef = useRef<HTMLUListElement>(null);
+ const leftArrow = useRef(null);
+ const rightArrow = useRef(null);
+
+ const scroll = (direction: "left" | "right") => {
+  const container = scrollbarRef.current;
+  if (container) {
+   if (direction === "left") {
+    container.scroll({
+     top: 0,
+     left: container.scrollLeft - SCROLL_AMOUNT,
+     behavior: "smooth",
+    });
+   } else {
+    container.scroll({
+     top: 0,
+     left: container.scrollLeft + SCROLL_AMOUNT,
+     behavior: "smooth",
+    });
+   }
+  }
+ };
+
+ const handleScroll = () => {
+  const container = scrollbarRef.current;
+  if (container && leftArrow.current && rightArrow.current) {
+   if (container.scrollLeft === 0) {
+    (leftArrow.current as HTMLDivElement).style.display = "none";
+   } else {
+    (leftArrow.current as HTMLDivElement).style.display = "block";
+   }
+   if (container.scrollLeft === container.scrollWidth - container.clientWidth) {
+    (rightArrow.current as HTMLDivElement).style.display = "none";
+   } else {
+    (rightArrow.current as HTMLDivElement).style.display = "block";
+   }
+  }
+ };
+
+ useEffect(() => {
+  handleScroll();
+  window.addEventListener("resize", handleScroll);
+  return () => {
+   window.removeEventListener("resize", handleScroll);
+  };
+ }, []);
 
  return (
   <>
@@ -55,8 +105,12 @@ function Projects() {
       className="w-[70vw] rounded-lg mx-auto projects-box pb-10"
      >
       <Row direction={"col"} fullHeight>
-       <nav>
-        <ul className="flex flex-wrap">
+       <nav className="relative">
+        <ul
+         className="flex overflow-x-scroll overflow-y-hidden scrollbar-hidden"
+         ref={scrollbarRef}
+         onScroll={handleScroll}
+        >
          {PROJECTS.map((item) => (
           <li
            key={item.label}
@@ -85,6 +139,21 @@ function Projects() {
           </li>
          ))}
         </ul>
+
+        <ArrowLeft
+         className="absolute left-3 top-[50%] translate-y-[-50%] bg-secondary-dark text-black rounded-full px-2 cursor-pointer"
+         width={"25"}
+         height={"25"}
+         ref={leftArrow}
+         onClick={() => scroll("left")}
+        />
+        <ArrowRight
+         className="absolute right-3 top-[50%] translate-y-[-50%] bg-secondary-dark text-black rounded-full px-2 cursor-pointer"
+         width={"25"}
+         height={"25"}
+         ref={rightArrow}
+         onClick={() => scroll("right")}
+        />
        </nav>
        <AnimatePresence mode="wait">
         <motion.div
