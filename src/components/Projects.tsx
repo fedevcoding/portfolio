@@ -141,14 +141,14 @@ function Projects() {
         </ul>
 
         <ArrowLeft
-         className="absolute left-3 top-[50%] translate-y-[-50%] bg-secondary-dark text-black rounded-full px-2 cursor-pointer"
+         className="absolute left-3 top-[50%] translate-y-[-50%] dark:bg-secondary-dark bg-secondary-light text-black rounded-full px-1 cursor-pointer"
          width={"25"}
          height={"25"}
          ref={leftArrow}
          onClick={() => scroll("left")}
         />
         <ArrowRight
-         className="absolute right-3 top-[50%] translate-y-[-50%] bg-secondary-dark text-black rounded-full px-2 cursor-pointer"
+         className="absolute right-3 top-[50%] translate-y-[-50%] dark:bg-secondary-dark bg-secondary-light text-black rounded-full px-1 cursor-pointer"
          width={"25"}
          height={"25"}
          ref={rightArrow}

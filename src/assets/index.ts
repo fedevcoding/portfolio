@@ -38,7 +38,9 @@ export { default as solidity } from "./icons/solidity.svg";
 export { default as golang } from "./icons/golang.svg";
 export { default as code } from "./icons/code.svg";
 export { default as tools } from "./icons/tools.svg";
+export { default as techToolsIcon } from "./icons/tech-tools.svg";
 export { default as food } from "./icons/food.svg";
+export { default as shadow } from "./icons/shadow.svg";
 export { default as url } from "./icons/url.svg";
 export { default as chat } from "./icons/chat.svg";
 export { default as bot } from "./icons/bot.svg";
@@ -50,6 +52,8 @@ export { default as about } from "./icons/info.svg";
 export { default as projects } from "./icons/tasks.svg";
 export { default as tech } from "./icons/tech.svg";
 
+export { default as techTools } from "./previews/tech-tools.png";
+export { default as boxshadowGenerator } from "./previews/box-shadow-generator.png";
 export { default as foodStudio } from "./previews/food-studio.png";
 export { default as urlShortener } from "./previews/url-shortener.png";
 export { default as chatCli } from "./previews/chat-cli.png";

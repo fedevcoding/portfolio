@@ -17,7 +17,7 @@ function Card({ name, mainIcon, icons }: Props) {
   <Section
    theme="primary"
    className="w-80 h-[28rem] rounded-lg"
-   style={{ boxShadow: "4px 9px 24.4px 10px rgba(0, 0, 0, 0.25)" }}
+   style={{ boxShadow: "rgb(0 0 0 / 45%) 1px 2px 12px 4px" }}
   >
    <Row direction={"col"} fullHeight>
     <div className="rounded-t-lg dark:bg-secondary-dark bg-secondary-light py-4">

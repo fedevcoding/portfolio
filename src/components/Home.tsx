@@ -62,9 +62,10 @@ function Home() {
        <br />A young full-stack developer from Italy
       </P>
 
-      <a href={"#about"}>
+      <a href={"#tech-stack"}>
        <button className="dark:bg-secondary-dark bg-secondary-light text-2xl text-black py-4 px-12 rounded-lg about-me">
-        About Me
+        {/* About Me */}
+        Tech Stack
        </button>
       </a>
      </Row>
