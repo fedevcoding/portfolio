@@ -35,7 +35,7 @@ function Home() {
       >
         <Header />
         <Row
-          justify={"center"}
+          justify={"evenly"}
           align={"center"}
           className={`${max.isSm ? "pb-20" : "h-home"} px-20`}
           gap={max.isMd ? "xl" : "2xl"}
@@ -44,7 +44,7 @@ function Home() {
           <Row
             direction={"col"}
             fullHeight
-            justify={"evenly"}
+            justify={"center"}
             gap={"md"}
             align={max.isSm ? "center" : "start"}
           >
