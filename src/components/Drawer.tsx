@@ -1,4 +1,4 @@
-import { about, discord, email, github, home, projects, tech } from "@/assets";
+import { about, linkedin, email, github, home, projects, tech } from "@/assets";
 import { AnimatePresence, Cycle } from "framer-motion";
 import { motion } from "framer-motion";
 import { Row } from "./ui/Row";
@@ -42,12 +42,14 @@ function Drawer({ open, toggle }: { open: boolean; toggle: Cycle }) {
                   />
                 </a>
                 <a
-                  href={"https://discordapp.com/users/646076973025722388"}
+                  href={
+                    "https://www.linkedin.com/in/federico-cavallini-7641b424b/"
+                  }
                   target="_blank"
                 >
                   <Img
-                    src={discord}
-                    alt="discord"
+                    src={linkedin}
+                    alt="linkedin"
                     className="dark:invert"
                     aspect={"square"}
                     fit="contain"

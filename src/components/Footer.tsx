@@ -1,4 +1,4 @@
-import { discord, email, github, pipe, telegram } from "@/assets";
+import { linkedin, email, github, pipe, telegram } from "@/assets";
 import { Row } from "./ui/Row";
 import { P } from "./ui/P";
 
@@ -22,12 +22,12 @@ function Footer() {
               />
             </a>
             <a
-              href={"https://discordapp.com/users/646076973025722388"}
+              href={"https://www.linkedin.com/in/federico-cavallini-7641b424b/"}
               target="_blank"
             >
               <Img
-                src={discord}
-                alt="Discord"
+                src={linkedin}
+                alt="Linkedin"
                 size={"sm-2"}
                 fit={"contain"}
                 aspect="square"
